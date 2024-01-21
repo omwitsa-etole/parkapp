@@ -304,6 +304,7 @@
 	cursor:pointer;
 	display:block;
 	font-size:19px;
+	color:orange;
 }
 .checked{
 	background:#ff7474;
@@ -328,7 +329,7 @@
 	width:41%;
 }
 
-@media(max-width:600px){
+@media(max-width:800px){
 	.support-nav{
 		position:absolute;
 		left:-25%;
@@ -362,6 +363,10 @@
 		z-index:2;
 		background:#ddd;
 		display:block;
+	}
+	#search-query{
+		max-width:228px;
+		margin-left:99px;
 	}
 }
 

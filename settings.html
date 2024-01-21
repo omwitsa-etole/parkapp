@@ -12,12 +12,12 @@
 <link rel="stylesheet" href="css/settings/line-awesome.min.css">
 <link rel="stylesheet" href="css/settings/material.css">
 
-<link rel="stylesheet" href="css/settings/line-awesome.min.css">
-
 <link rel="stylesheet" href="css/settings/select2.min.css">
 
 
 <link rel="stylesheet" href="css/settings/style.css">
+
+<link rel="stylesheet" href="css/settings.css">
 <style>
 .selection{display:none;}
 </style>
@@ -56,19 +56,21 @@
    <script src="https://use.fontawesome.com/4f05e2c5d5.js"></script>
 </head>
 <body class="twocolumn-panel">
-{%if msg != None%}
-<section class="alert"> <span class="closebtn" onclick="this.parentElement.remove()">&times;</span> {{msg}} </section>
-{%endif%}
+
 <div class="main-wrapper">
 
 <div class="header">
 
 <div class="header-left">
 <a href="admin-dashboard.html" class="logo">
-<img src="static/assets/img/logo2.png" width="40" height="40" alt="">
+<span class="logo-lg">
+	<img src="assets/images/logo-light.png" alt="" height="11" style="width:95%;height:6vh;">
+</span>
 </a>
-<a href="admin-dashboard.html" class="logo2">
-<img src="static/assets/img/logo2.png" width="40" height="40" alt="">
+<a href="admin-dashboard.html" class="logo2" style="">
+<span class="logo-lg">
+	<img src="assets/images/logo-light.png" alt="" height="11" style="width:95%;zoom:500%;">
+</span>
 </a>
 </div>
 
@@ -106,7 +108,7 @@
 
 <li class="nav-item dropdown has-arrow main-drop">
 <a href="#" class="dropdown-toggle nav-link" data-bs-toggle="dropdown-menu">
-<span class="user-img"><img src="{{url_for('static',filename='assets/img/profiles/avatar.jpg')}}" alt="">
+<span class="user-img"><img src="assets/images/users/avatar-1.jpg" alt="">
 <span class="status online"></span></span>
 
 <span>Admin</span>
@@ -143,32 +145,25 @@
 <nav class="greedy">
 <ul class="list-inline-item list-unstyled links">
 <li>
-<a href="admin-dashboard.html"><i class="fa fa-home"></i> <span>Back to Home</span></a>
+<a href="admin.html"><i class="fa fa-home"></i> <span>Back to Home</span></a>
 </li>
 <li class="menu-title">Settings</li>
 <li class="active">
 <a href="#settings.html"><i class="fa fa-building"></i> <span>Company Settings</span></a>
 </li>
-<li class="active">
-<a href="#rate.html"><i class="fa fa-building"></i> <span>Rate Settings</span></a>
+<li >
+<a href="#rate.html"><i class="fa fa-percent"></i> <span>Rate Settings</span></a>
 </li>
-<li class="active">
-<a href="#payment.html"><i class="fa fa-building"></i> <span>Payment Settings</span></a>
+<li >
+<a href="#payment.html"><i class="fa fa-dollar-sign"></i> <span>Payment Settings</span></a>
 </li>
 <li>
 <a href="#email-settings.html"><i class="fa fa-at"></i> <span>Email Settings</span></a>
 </li>
 <li>
-<a href="#notifications.html"><i class="fa fa-at"></i> <span>Notification Settings</span></a>
+<a href="#notifications.html"><i class="fa fa-bell"></i> <span>Notification Settings</span></a>
 </li>
-<!--------
-<li>
-<a href="invoice-settings.html"><i class="fa fa-pencil-square"></i> <span>Invoice Settings</span></a>
-</li>
-<li>
-<a href="salary-settings.html"><i class="fa fa-money"></i> <span>Salary Settings</span></a>
-</li>
------------->
+
 <li>
 <a href="#change-password.html"><i class="fa fa-lock"></i> <span>Change Password</span></a>
 </li>
@@ -475,27 +470,6 @@ function Alert(msg){
 	`;
         document.body.append(d);
 }
-$("#myForm").submit(function(e){
-	e.preventDefault();
-	let email = $("#email").val();
-	let name = $("#name").val();
-	let password = $("#password").val();
-	if(email == "" || name ==  "" || password == ""){
-		Alert("All fields are mandatory");
-		return false;
-	}
-	
-	$.ajaxSetup({async:false});
-	let msg = $.post("/email-settings",{email:email,name:name,password:password});
-	msg =JSON.stringify(msg.responseText);
-   	msg = JSON.parse(msg);msg = JSON.parse(msg);
-	if(msg.success){
-		Alert("Details updated successfully");
-	}else{
-		Alert(msg.message);
-	}
-	$.ajaxSetup({async:true});
-})
 
 </script>
 
