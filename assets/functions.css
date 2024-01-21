@@ -325,6 +325,9 @@
 	height: 44px;
 	background: #ddd;
 }
+.parking-body{
+	overflow-y:auto;
+}
 .refresh-map{
 	position: absolute;
 	right: 1%;
@@ -555,4 +558,14 @@
 @keyframes fadeIn {
   from {opacity: 0;}
   to {opacity:1 ;}
+}
+
+.savebtn{
+	position:absolute;
+	right:1%;
+	top:-1%;
+}
+.savebtn input{
+	padding:14px;
+	cursor:pointer;
 }

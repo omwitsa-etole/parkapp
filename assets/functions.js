@@ -185,6 +185,9 @@ function parkingMap(){
 	body.innerHTML = `
 	<div style="position:relative;width: 100%;">
 	<h4>ParkingMap</h4>
+	<div class="savebtn">
+		<input type="button" class="" value="Save Updates">
+	</div>
 	<a class="settings-map" id="settings-map">
 		<i class="fa-solid fa-bars"></i>
 	</a>
@@ -211,7 +214,7 @@ function parkingMap(){
 			<div class="settings-body" id="content">
 				<ul class="setting-options">
 					<li value="path" onclick="newContext(this.value)">Add Path </li>
-					<li value="slot" onclick="newContext(this.value)">Add Slot </li>
+					<li value="slot" onclick="newSlot(this.value)">Add Slot </li>
 				</ul>
 			</div>
 		</div>
@@ -226,6 +229,33 @@ function parkingMap(){
 		}
 	})
 	loadMap()
+}
+
+function newSlot(){
+	const container = document.getElementById("container")
+	const bg = "#ff7474";
+	const stet = "Free";
+	let spot = "";
+	let x = Math.floor(Math.random() * 2);
+	let i = Math.floor(Math.random() * 99);
+	spot = `
+			<div class="input-container">
+				<div class="popup" id=${"msg"+i} >
+					<span class="popuptext" id=${"notify"+i} onclick="closeAction(this)">Popup text...</span>
+				  </div>
+			  <input id=${"drive"+i} class="radio-button" type="radio" name="radio">
+			  <div class="radio-tile">
+				<div class="icon car-icon">
+				  <svg fill=${bg} height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M18.92 6.01C18.72 5.42 18.16 5 17.5 5h-11c-.66 0-1.21.42-1.42 1.01L3 12v8c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-1h12v1c0 .55.45 1 1 1h1c.55 0 1-.45 1-1v-8l-2.08-5.99zM6.5 16c-.83 0-1.5-.67-1.5-1.5S5.67 13 6.5 13s1.5.67 1.5 1.5S7.33 16 6.5 16zm11 0c-.83 0-1.5-.67-1.5-1.5s.67-1.5 1.5-1.5 1.5.67 1.5 1.5-.67 1.5-1.5 1.5zM5 11l1.5-4.5h11L19 11H5z"></path>
+					<path d="M0 0h24v24H0z" fill=${bg}></path>
+				  </svg>
+				</div>
+				<label for=${"drive"+i} class="radio-tile-label">${stet}</label>
+			  </div>
+			</div>
+		`;
+	container.children[0].innerHTML += spot;
 }
 
 
