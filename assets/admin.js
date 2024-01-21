@@ -121,7 +121,7 @@ function towerPage(){
 	</div>
 	
 	
-<div class="row" style="position: absolute;right: 5%;top: 5%;height: 400px;">
+<div class="row shiftnew" style="">
 	
 	<div class="col-xxl-4 flex-box" >
 			<!-- card -->
@@ -252,7 +252,7 @@ function handlerPage(){
 	</div>
 	
 	
-<div class="row" style="position: absolute;right: 5%;top: 5%;height: 400px;">
+<div class="row shiftnew" style="">
 	
 	<div class="col-xxl-4 flex-box" >
 			<!-- card -->

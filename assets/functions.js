@@ -240,6 +240,9 @@ function loadMap(){
 		let x = Math.floor(Math.random() * 2);
 		spot += `
 			<div class="input-container">
+				<div class="popup" id=${"msg"+i} >
+					<span class="popuptext" id=${"notify"+i} onclick="closeAction(this)">Popup text...</span>
+				  </div>
 			  <input id=${"drive"+i} class="radio-button" type="radio" name="radio">
 			  <div class="radio-tile">
 				<div class="icon car-icon">
@@ -262,7 +265,8 @@ function loadMap(){
 	container.appendChild(map)
 	
 	$(document).on('click', '.radio-button', function(e) {
-		
+		const el = e.target.parentElement
+		showAction(el.children[0].children[0])
 		showContent(e.target)
 	});
 	container.setAttribute("style","width:99%;height:586px;box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;")
@@ -296,4 +300,12 @@ function showContent(el){
 			</div>
 	`;
 	
+}
+
+function showAction(el){
+	el.classList.toggle("show");
+
+}
+function closeAction(el){
+	document.getElementById(el.id).classList.remove('show')
 }

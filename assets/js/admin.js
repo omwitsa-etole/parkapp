@@ -114,7 +114,7 @@ function analysisPage(){
 										</div>
 										<div class="avatar-sm flex-shrink-0">
 											<span class="avatar-title bg-primary-subtle rounded fs-3">
-												<i class="fa fa-dollar-circle text-primary"></i>
+												<i class="fa fa-dollar-sign text-primary"></i>
 											</span>
 										</div>
 									</div>
@@ -281,13 +281,13 @@ function analysisPage(){
 					
 					<div class="row" style="min-width: 99%;">     
 						<div class="col-xl-6" style="min-width: 99%;">
-							<div class="card card-height-100" style="min-width: 99%;">
+							<div class="card" style="min-width: 99%;">
 								<div class="card-header align-items-center d-flex">
 									<h4 class="card-title mb-0 flex-grow-1">Top Sellers</h4>
 									<div class="flex-shrink-0">
 										<div class="dropdown card-header-dropdown">
 											<a class="text-reset dropdown-btn" href="#" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-												<span class="text-muted">Report<i class="mdi mdi-chevron-down ms-1"></i></span>
+												<span class="text-muted">Report<i class="fa fa-chevron-down ms-1"></i></span>
 											</a>
 											<div class="dropdown-menu dropdown-menu-end" style="">
 												<a class="dropdown-item" href="#">Download Report</a>
@@ -306,27 +306,27 @@ function analysisPage(){
 													<td>
 														<div class="d-flex align-items-center">
 															<div class="flex-shrink-0 me-2">
-																<img src="assets/images/users/avatar-1.png" alt="" class="avatar-sm p-2">
+																<img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-sm p-2">
 															</div>
 															<div>
-																<h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.html" class="text-reset">iTest Factory</a>
+																<h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.html" class="text-reset">Location id</a>
 																</h5>
 																<span class="text-muted">Parking Name</span>
 															</div>
 														</div>
 													</td>
 													<td>
-														<span class="text-muted">Bags and Wallets</span>
+														<span class="text-muted">Nairobi CBD</span>
 													</td>
 													<td>
 														<p class="mb-0">8547</p>
-														<span class="text-muted">Stock</span>
+														<span class="text-muted">Bookings</span>
 													</td>
 													<td>
 														<span class="text-muted">$541200</span>
 													</td>
 													<td>
-														<h5 class="fs-14 mb-0">32%<i class="ri-bar-chart-fill text-success fs-16 align-middle ms-2"></i>
+														<h5 class="fs-14 mb-0">32%<i class="fa fa-arrow-up text-success fs-16 align-middle ms-2"></i>
 														</h5>
 													</td>
 												</tr><!-- end -->
