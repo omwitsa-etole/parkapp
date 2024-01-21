@@ -279,9 +279,9 @@ function analysisPage(){
 						</div> <!-- .col-->
 					</div>
 					
-					<div class="row" style="width: 99%;">     
-						<div class="col-xl-6">
-							<div class="card card-height-100" style="width: 99%;">
+					<div class="row" style="min-width: 99%;">     
+						<div class="col-xl-6" style="min-width: 99%;">
+							<div class="card card-height-100" style="min-width: 99%;">
 								<div class="card-header align-items-center d-flex">
 									<h4 class="card-title mb-0 flex-grow-1">Top Sellers</h4>
 									<div class="flex-shrink-0">
