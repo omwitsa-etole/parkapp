@@ -129,14 +129,14 @@ function towerPage(){
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">Add new Tower</h4>
 					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
+						<button type="button" id="addhandler" class="btn btn-soft-primary btn-sm">
 							Add Tower
 						</button>
 					</div>
 				</div><!-- end card header -->
 		
 				<!-- card body -->
-				<div class="card-body addbg">
+				<div class="card-body addbg"  style="display:none;" id="handlerPage">
 					<div class="form-container">
 					  <div class="logo-container">
 						New Tower
@@ -167,6 +167,14 @@ function towerPage(){
 
 </div>
 	`;
+	$("#addhandler").click(()=>{
+		const block = document.getElementById("handlerPage")
+		if(block.hasAttribute("style")){
+			block.removeAttribute("style")
+		}else{
+			block.setAttribute("style","display:none;height:1vh;")
+		}
+	})
 }
 
 function handlerPage(){
@@ -260,14 +268,14 @@ function handlerPage(){
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">Add new Handler</h4>
 					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
+						<button type="button" id="addhandler" class="btn btn-soft-primary btn-sm">
 							Add handler
 						</button>
 					</div>
 				</div><!-- end card header -->
 		
 				<!-- card body -->
-				<div class="card-body addbg">
+				<div class="card-body addbg" style="display:none;" id="handlerPage">
 					<div class="form-container">
 					  <div class="logo-container">
 						New Handler
@@ -298,9 +306,15 @@ function handlerPage(){
 	
 	
 </div>
-	
-
 	`;
+	$("#addhandler").click(()=>{
+		const block = document.getElementById("handlerPage")
+		if(block.hasAttribute("style")){
+			block.removeAttribute("style")
+		}else{
+			block.setAttribute("style","display:none;height:1vh;")
+		}
+	})
 }
 
 function hashChange(){
@@ -326,6 +340,10 @@ function hashChange(){
 		towerPage();
 	}else if(hash.includes("handlers")){
 		handlerPage();
+	}else if(hash.includes("account")){
+		parkingPage();
+	}else if(hash.includes("addnew")){
+		addnewPage();
 	}else{
 		adminDashboard();
 	}

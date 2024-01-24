@@ -651,6 +651,7 @@
 </style>
 
 <link rel="stylesheet" href="assets/functions.css">
+<link href="assets/account.css" rel="stylesheet" type="text/css">
 
 </head>
 
@@ -1013,7 +1014,7 @@
                             <div class="col-xl-6">
                                 <div class="d-flex flex-column h-100">
                                     <div class="row">
-                                        <div class="col-xl-6 col-md-6">
+                                        <div class="col-xl-6 col-md-6" onclick="location.hash='account'" style="cursor: pointer;">
                                             <div class="card card-animate overflow-hidden ">
                                                 <div class="position-absolute start-0" style="z-index: 0;">
                                                     <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
@@ -1038,7 +1039,7 @@
                                                 </div><!-- end card body -->
                                             </div><!-- end card -->
                                         </div><!--end col-->
-                                        <div class="col-xl-6 col-md-6">
+                                        <div class="col-xl-6 col-md-6" onclick="location.hash='account'" style="cursor: pointer;">
                                             <!-- card -->
                                             <div class="card card-animate overflow-hidden">
                                                 <div class="position-absolute start-0" style="z-index: 0;">
@@ -1063,134 +1064,13 @@
                                                 </div><!-- end card body -->
                                             </div><!-- end card -->
                                         </div><!-- end col -->
-                                        <div class="col-xl-6 col-md-6">
-                                            <!-- card -->
-                                            <div class="card card-animate overflow-hidden">
-                                                <div class="position-absolute start-0" style="z-index: 0;">
-                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
-                                                        <style>
-                                                            .s0 {
-                                                                opacity: .05;
-                                                                fill: var(--vz-success)
-                                                            }
-                                                        </style>
-                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="card-body" style="z-index:1 ;">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1 overflow-hidden">
-                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3">New Spots</p>
-                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="4305">4,305</span></h4>
-                                                        </div>
-
-                                                    </div>
-                                                </div><!-- end card body -->
-                                            </div><!-- end card -->
-                                        </div><!-- end col -->
-                                        <div class="col-xl-6 col-md-6">
-                                            <!-- card -->
-                                            <div class="card card-animate overflow-hidden">
-                                                <div class="position-absolute start-0" style="z-index: 0;">
-                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
-                                                        <style>
-                                                            .s0 {
-                                                                opacity: .05;
-                                                                fill: var(--vz-success)
-                                                            }
-                                                        </style>
-                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="card-body" style="z-index:1 ;">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1 overflow-hidden">
-                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Pending Spots</p>
-                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="5021">5,021</span></h4>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div><!-- end card body -->
-                                            </div><!-- end card -->
-                                        </div><!-- end col -->
-                                        <div class="col-xl-6 col-md-6">
-                                            <div class="card card-animate overflow-hidden">
-                                                <div class="position-absolute start-0" style="z-index: 0;">
-                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
-                                                        <style>
-                                                            .s0 {
-                                                                opacity: .05;
-                                                                fill: var(--vz-success)
-                                                            }
-                                                        </style>
-                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="card-body" style="z-index:1 ;">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1 overflow-hidden">
-                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Parked Slots</p>
-                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="3948">3,948</span></h4>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div><!-- end card body -->
-                                            </div><!-- end card -->
-                                        </div><!--end col-->
-                                        <div class="col-xl-6 col-md-6">
-                                            <!-- card -->
-                                            <div class="card card-animate overflow-hidden">
-                                                <div class="position-absolute start-0" style="z-index: 0;">
-                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
-                                                        <style>
-                                                            .s0 {
-                                                                opacity: .05;
-                                                                fill: var(--vz-success)
-                                                            }
-                                                        </style>
-                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
-                                                    </svg>
-                                                </div>
-                                                <div class="card-body" style="z-index:1 ;">
-                                                    <div class="d-flex align-items-center">
-                                                        <div class="flex-grow-1 overflow-hidden">
-                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3">Cancelled Spots</p>
-                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="1340">1,340</span></h4>
-                                                        </div>
-                                                        
-                                                    </div>
-                                                </div><!-- end card body -->
-                                            </div><!-- end card -->
-                                        </div><!-- end col -->
-                                    </div><!--end row-->
+                                        
+                                 </div><!--end row-->
                                 </div>
                             </div><!--end col-->
-                            <div class="col-xl-6">
-                                <div class="card card-card card-height-100 " style="overflow-y:auto;">
-                                    <div class="card-header align-items-center d-flex">
-                                        <h4 class="card-title mb-0 flex-grow-1">Current Status</h4>
-                                        <div class="flex-shrink-0">
-                                            <a href="#!" class="btn btn-soft-primary btn-sm">Refresh <i class="ri-arrow-right-line align-bottom"></i></a>
-                                        </div>
-                                    </div><!-- end card header -->
-
-                                    <div class="card-body">
-                                        <div class="table-responsive table-card">
-											<div style="width:100%;height:95%;">
-												<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
-											</div>
-											
-                                        </div>
-                                        
-                                    </div>
-                                </div> <!-- .card-->
-                            </div><!--end col-->
-                        </div><!--end row-->
-                        
-						<div class="row flex-display" >
-						<div class="col-xxl-4 flex-box">
-                                <!-- card -->
-                                <div class="card card-card card-height-100" >
+                            							
+							<div class="col-xl-6">
+								<div class="card card-card card-height-100" >
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Recent Events</h4>
                                         <div class="flex-shrink-0">
@@ -1211,11 +1091,30 @@
                                     </div>
                                     <!-- end card body -->
                                 </div>
-                                <!-- end card -->
-                        </div>
-						<div class="col-xxl-4 flex-box" >
-                                <!-- card -->
-                                <div class="card card-card card-height-100" style="min-width: 45%;">
+							</div>
+							
+							<div class="col-xl-6">
+                                <div class="card card-card card-height-100 " style="overflow-y:auto;">
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Current Status</h4>
+                                        <div class="flex-shrink-0">
+                                            <a  class="btn btn-soft-primary btn-sm">Refresh <i class="fa-arrow-right-line align-bottom"></i></a>
+                                        </div>
+                                    </div><!-- end card header -->
+
+                                    <div class="card-body">
+                                        <div class="table-responsive table-card">
+											<div style="width:100%;height:95%;">
+												<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+											</div>
+											
+                                        </div>
+                                        
+                                    </div>
+                                </div> <!-- .card-->
+                            </div><!--end col-->
+							<div class="col-xl-6">
+								<div class="card card-card card-height-100" style="min-width: 45%;">
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Sales By Location</h4>
                                         <div class="flex-shrink-0">
@@ -1227,14 +1126,9 @@
                             
                                     <!-- card body -->
                                     <div class="card-body">
-                            
-                                        
+                       
                                         <div class="px-2 py-2 mt-4">
-                                            <p class="mb-1">Nairobi South B<span class="float-end">75%</span></p>
-                                            <div class="progress mt-2" style="height: 6px;">
-                                                <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 75%" aria-valuenow="75" aria-valuemin="0" aria-valuemax="75"></div>
-                                            </div>
-                            
+                                            
                                             <p class="mt-3 mb-1">Eastleigh <span class="float-end">47%</span>
                                             </p>
                                             <div class="progress mt-2" style="height: 6px;">
@@ -1249,9 +1143,9 @@
                                     </div>
                                     <!-- end card body -->
                                 </div>
-                                <!-- end card -->
-                        </div>
-						</div>
+							</div>
+                        </div><!--end row-->
+                        
 						
                         <div class="row" style="min-width: 99%;">
                             <div class="col-xxl-8">

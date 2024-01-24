@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8"/>
+        <link rel="icon" href="/Mawingubluelogo.ico"/>
+        <meta name="viewport" content="width=device-width,initial-scale=1"/>
+        <meta name="theme-color" content="#000000"/>
+        <meta name="description" content="Web site created using create-react-app"/>
+       
+        <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.2.0/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/dataTables.bootstrap5.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pikaday/css/pikaday.css">
+        <link href="styleguide.css" rel="stylesheet"/>
+        <title>Selfcare</title>
+        
+        <link href="css/main.css" rel="stylesheet">
+		<style>
+			#root{
+				max-width:75%;
+				margin:5% auto;
+			}
+			.modal-container{
+				margin-top:-9%;
+				
+			}
+			.Loginpageimg{}
+		</style>
+    </head>
+    <body class="hold-transition sidebar-mini layout-fixed">
+        <noscript>You need to enable JavaScript to run this app.</noscript>
+        <div id="page">
+		<div class="self-carepage">
+			  <div class="actionbtns" id="actionbtns">
+				<button onclick="loginDashboard()" class="logout-button"> Logout</button>
+			  </div>
+			<div id="root"></div>
+       
+			<ToastContainer position="top-center" auto-close={4000} hide-progress-bar={false} newest-on-top={false} close-on-click rtl={false} pause-on-focus-loss draggable pause-on-hover style={{
+				top: '30%',
+				left: '50%',
+				transform: 'translate(-50%, -50%)'
+			  }} // Center both vertically and horizontally
+			  />
+          </div>
+		</div>
+    </body>
+	<script defer="defer" src="js/handler.js"></script>
+</html>

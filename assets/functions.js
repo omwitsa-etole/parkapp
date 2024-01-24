@@ -3,7 +3,77 @@ const body = EL;
 
 const layouts = ["Parallel","Angled","Single Level Lots","Multi-Level Lots"];
 const rates = ["hourly","flat"]
+var currentTab = 0;
 
+function showTab(n) {
+  // This function will display the specified tab of the form ...
+  var x = document.getElementsByClassName("tabs");
+  x[n].style.display = "block";
+  // ... and fix the Previous/Next buttons:
+  if (n == 0) {
+    document.getElementById("prevBtn").style.display = "none";
+  } else {
+    document.getElementById("prevBtn").style.display = "inline";
+  }
+  if (n == (x.length - 1)) {
+    document.getElementById("nextBtn").innerHTML = "Submit";
+  } else {
+    document.getElementById("nextBtn").innerHTML = "Next";
+  }
+  // ... and run a function that displays the correct step indicator:
+  fixStepIndicator(n)
+}
+
+function nextPrev(n) {
+  // This function will figure out which tab to display
+  var x = document.getElementsByClassName("tabs");
+  // Exit the function if any field in the current tab is invalid:
+  if (n == 1 && !validateForm()) return false;
+  // Hide the current tab:
+  x[currentTab].style.display = "none";
+  // Increase or decrease the current tab by 1:
+  currentTab = currentTab + n;
+  // if you have reached the end of the form... :
+  if (currentTab >= x.length) {
+    //...the form gets submitted:
+    document.getElementById("regForm").submit();
+    return false;
+  }
+  // Otherwise, display the correct tab:
+  showTab(currentTab);
+}
+
+function validateForm() {
+  // This function deals with validation of the form fields
+  var x, y, i, valid = true;
+  x = document.getElementsByClassName("tabs");
+  y = x[currentTab].getElementsByTagName("input");
+  // A loop that checks every input field in the current tab:
+  for (i = 0; i < y.length; i++) {
+    // If a field is empty...
+    if (y[i].value == "") {
+      // add an "invalid" class to the field:
+      y[i].className += " invalid";
+      // and set the current valid status to false:
+      valid = false;
+    }
+  }
+  // If the valid status is true, mark the step as finished and valid:
+  if (valid) {
+    document.getElementsByClassName("step")[currentTab].className += " finish";
+  }
+  return valid; // return the valid status
+}
+
+function fixStepIndicator(n) {
+  // This function removes the "active" class of all steps...
+  var i, x = document.getElementsByClassName("step");
+  for (i = 0; i < x.length; i++) {
+    x[i].className = x[i].className.replace(" active", "");
+  }
+  //... and adds the "active" class to the current step:
+  x[n].className += " active";
+}
 
 const startFunction =(e)=>{
 	EL = document.getElementById("pageRoot");
@@ -12,128 +82,7 @@ const startFunction =(e)=>{
 window.addEventListener("load",startFunction);
 
 function addParking(){
-	let el = document.createElement("div");
-	el.classList.add("normal")
-	el.setAttribute("style","width: 620px;")
-	let types = ""
-	
-	let rateType = ""
-	for(const layout of layouts.keys()){
-		console.log(layouts[layout])
-		types +=`<option value=${layouts[layout]}>${layouts[layout]}</option>`; 
-	} 
-	for(const rate of rates){
-		rateType += `<option value=${rate}>${rate}</option>`
-	}
-	el.innerHTML = `
-<div class="page-content" style="width: 600px;">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-10 col-xl-9" style="width: 100%;height: 100%;position:relative;">
-        <div class="card-new" style="width: 100%;">
-          <div class="form-step form-step1">
-            <div class="form-step-head card-innr">
-              <div class="step-head">
-                <div class="step-number">01</div>
-                <div class="step-head-text">
-                  <h4>Parking Details</h4>
-                  
-                </div>
-              </div>
-            </div>
-           
-            <div class="form-step-fields card-innr">
-              <div class="note note-plane note-light-alt note-md pdb-1x">
-                
-                
-              </div>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                      Name <span class="text-danger">*</span>
-                    </label>
-                    <input class="input-bordered" type="text" id="name" />
-                  </div>
-                 
-                </div>
-              
-               
-              
-                <div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                      Address <span class="text-danger">*</span>
-                    </label>
-                    <input class="input-bordered" type="text" id="address" />
-                  </div>
-                 
-                </div>
-               
-                <div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                     Slots <span class="text-danger">*</span>
-                    </label>
-                    <input class="input-bordered" type="number" id="slots"/>
-                  </div>
-                
-                </div>
-               
-                
-				
-				<div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                      Type <span class="text-danger">*</span>
-                    </label>
-                    <select>
-						${types}
-					</select>
-                  </div>
-                  
-                </div>
-				
-				<div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                      Rate <span class="text-danger">*</span>
-                    </label>
-                    <input class="input-bordered date-picker" type="number" id="rate-value" />
-                  </div>
-                  
-                </div>
-				
-				<div class="col-md-6">
-                  <div class="input-item input-with-label">
-                    <label class="input-item-label">
-                      Rate type <span class="text-danger">*</span>
-                    </label>
-                    <select id="rate-type">${rateType}</select>
-                  </div>
-                  
-                </div>
-              
-              </div>
-              <div class="btn-card">
-              <button class="btn-submit" onclick="newParking()">Submit</button>
-			  <button class="btn-submit cancel" onclick="closeTab()">Cancel</button>
-			  </div>
-            
-          </div>
-        </div>
-       
-      </div>
-    </div>
-  </div>
-  
-</div>
-	
-	`;
-	body.innerHTML = "";
-	
-	body.appendChild(el);
-	body.setAttribute("style","display:block;")
+	addnewPage()
 	
 }
 
@@ -305,6 +254,7 @@ function loadMap(){
 function showContent(el){
 	const content = document.getElementById("content")
 	content.innerHTML = `
+	
 		<div style="width:100%;">
 			  <div class="p-3" style="background-color: #eee;">
 				<span class="fw-bold">Order Recap</span>
@@ -339,3 +289,244 @@ function showAction(el){
 function closeAction(el){
 	document.getElementById(el.id).classList.remove('show')
 }
+
+function parkingPage(){
+	const body = document.getElementById("page-content");
+	body.innerHTML =`
+		<div class="newcontainer" id="container">
+		<div class="contentbox flexcontainer">
+			<div class="contenttop rowcontainer">
+				<div class="accountselect">
+					<div class="dropdown">
+					  <button onclick="dropFunction()" class="dropbtn button-6">
+						<span id="selectval">Dropdown</span>
+						<span id="selecticon"><i class="fa-solid fa-caret-down"></i></span>
+					  </button>
+					  <div id="myDropdown" class="dropdown-content">
+						<a onclick="changeAccount(this)">Link 1</a>
+						<a onclick="changeAccount(this)">Link 2</a>
+						<a class="addnew" onclick="addnewPage()">Add new Account</a>
+					  </div>
+					</div>
+				</div>
+				<div class="accountsettings">
+					<button class="setting-btn" title="account settings" onclick="newModal('settings')">
+					  <span class="bar bar1"></span>
+					  <span class="bar bar2"></span>
+					  <span class="bar bar1"></span>
+					</button>
+
+				</div>
+			</div>
+			<div class="rowcontainer actions">
+				<div class="bookings">
+					<div class="bookingstitle">
+						Bookings
+					</div>
+					<div class="bookingsvalue">
+						123
+					</div>
+				</div>
+				<div class="buttons">
+					<button class="button-6" onclick="loadMap()">Map</button>
+					<button class="button-6" onclick="analysisPage()">Analysis</button>
+				</div>
+			</div>
+			<hr class="rowcontainer"/>
+			<div class="rowcontainer">
+				<ul class="headmenu">
+					<li class="headmenuitem">Parking Info</li>
+					<li class="headmenuitem">Perfomance</li>
+				</ul>
+			</div>
+			<div class="rowcontainer accountviewer">
+				<ul class="viewerlist">
+					<li class="vieweritem">
+						<span class="viewertitle">Parking Info</span>
+						<span class="viewervalue">12345</span>
+					</li>
+					<li class="vieweritem">
+						<span class="viewertitle">Parking Info</span>
+						<span class="viewervalue">12345</span>
+					</li>
+					<li class="vieweritem">
+						<span class="viewertitle">Parking Info</span>
+						<span class="viewervalue">12345</span>
+					</li>
+					<li class="vieweritem">
+						<span class="viewertitle">Parking Info</span>
+						<span class="viewervalue">12345</span>
+					</li>
+					<li class="vieweritem">
+						<span class="viewertitle">Parking Info</span>
+						<span class="viewervalue">12345</span>
+					</li>
+					
+				</ul>
+			</div>
+		</div>
+		</div>
+	`;
+}
+function dropFunction() {
+  document.getElementById("myDropdown").classList.toggle("show");
+  
+}
+function changeAccount(el) {
+  const btn = document.getElementById("selectval")
+  btn.innerText = el.innerText
+  
+}
+
+const newaddform = ()=>{
+	let res = `
+		<form class="newform" id="regForm" action="">
+
+			<h1>New Parking Station:</h1>
+
+			<!-- One "tab" for each step in the form: -->
+			<div class="tabs">Name:
+			  <p><input placeholder="Parking name..." oninput="this.className = ''"></p>
+			  <p><input placeholder="Other name..." oninput="this.className = ''"></p>
+			</div>
+
+			<div class="tabs">Contact Info:
+			  <p><input placeholder="E-mail..." oninput="this.className = ''"></p>
+			  <p><input placeholder="Phone..." oninput="this.className = ''"></p>
+			</div>
+
+			<div class="tabs">Rate:
+			  <p>Rate type<select><option>Flat</option></select></p>
+			  <p>Rate other<select><option>Flat</option></select></p>
+			  <p>Rate value<input placeholder="" oninput="this.className = ''"></p>
+			</div>
+
+			<div class="tabs">Login Info:
+			  <p><input placeholder="Username..." oninput="this.className = ''"></p>
+			  <p><input placeholder="Password..." oninput="this.className = ''"></p>
+			</div>
+
+			<div style="overflow:auto;">
+			  <div style="float:right;">
+			  <button type="button" id="cancelBtn" onclick="location.hash='dashboard'">Cancel</button>
+				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			  </div>
+			</div>
+
+			<!-- Circles which indicates the steps of the form: -->
+			<div style="text-align:center;margin-top:40px;">
+			  <span class="step"></span>
+			  <span class="step"></span>
+			  <span class="step"></span>
+			  <span class="step"></span>
+			</div>
+
+			</form>
+	`;
+	return res;
+}
+
+const newformdata = ()=>{
+	res = `
+		<div class="container">
+			  <div class="card cardcontainer cart">
+				<label class="title">CHECKOUT</label>
+				<div class="steps">
+				  <div class="stepp">
+					<div>
+					  <span class="floatright"><button onclick="newModal('address')"> Select</button></span>
+					  
+					  <p>221B Baker Street, W1U 8ED</p>
+					  <p>London, United Kingdom</p>
+					</div>
+					<hr>
+					<div>
+					  <span class="floatright"><button onclick="newModal('payment')">Select</button></span>
+					  <span>PAYMENT METHOD</span>
+					  <p>Visa</p>
+					  <p>**** **** **** 4243</p>
+					</div>
+					<hr>
+					<div class="promo">
+					  <span>No of Slots available?</span>
+					  <form class="form">
+						<input type="number" placeholder="Enter" min="1" value="5" class="input_field">
+						<button type="button">Apply</button>
+					  </form>
+					</div>
+					<hr>
+					<div class="payments">
+					  <span>SUMMARY</span>
+					  <div class="details">
+						<span>Name:</span>
+						<span class="">NAIROBI CBD</span>
+						<span>Rate:</span>
+						<span>KES 240.00</span>
+						<span>Type:</span>
+						<span>Flat</span>
+						<span>Tax:</span>
+						<span>$30.40</span>
+					  </div>
+					</div>
+					<hr>
+					<div class="checkout">
+						<div class="footerz">
+						  
+						  <button class="checkout-btn">Save</button>
+						  <button class="checkout-btn cancel">Cancel</button>
+						</div>
+					</div>
+				  </div>
+				</div>
+			  </div>
+
+			  
+			</div>
+	`
+	return res;
+}
+function addnewPage() {
+  const body = document.getElementById("page-content");
+	let types = ""
+	
+	let rateType = ""
+	for(const layout of layouts.keys()){
+		console.log(layouts[layout])
+		types +=`<option value=${layouts[layout]}>${layouts[layout]}</option>`; 
+	} 
+	for(const rate of rates){
+		rateType += `<option value=${rate}>${rate}</option>`
+	}
+	body.innerHTML = `
+		<div class="newcontainer " id="container" >
+			<div class="flexbox" >
+				<div class="rowbox datas" >
+					${newaddform()}
+				</div>
+				<div class="rowbox checkdetails">
+					${newformdata()}
+				</div>
+			</div>	
+		</div>
+  `;
+  showTab(currentTab);
+ }
+ 
+function newModal(flow){
+	const body =document.getElementById("page-content");
+	let id = Math.floor(Math.random() * 999);
+	id = ""+id
+	const el = document.createElement("div")
+	el.setAttribute("class","floating")
+	el.setAttribute("id",id)
+	el.innerHTML = `
+		<div>
+			<div class="floatheader">Title: ${flow.toUpperCase()}</div>
+			<div class="floatheaderfooter">
+				<button class="button-25" role="button" onclick="document.getElementById(${id}).remove()">Cancel</button>
+			</div>
+		</div>
+	`
+	body.appendChild(el)
+ }
