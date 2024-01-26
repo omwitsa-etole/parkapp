@@ -193,6 +193,80 @@ function userActivity(){
 	`;
 }
 
+function showResult(){
+	const body =document.getElementById("page-content");
+	let id = Math.floor(Math.random() * 999);
+	id = ""+id
+	const el = document.createElement("div")
+	el.setAttribute("class","floating")
+	el.setAttribute("id",id)
+	el.innerHTML = `
+		<section class="vh-100" style="background-color: #eee;">
+			<div class="container py-5 h-100" style="display:flex;flex-direction:row;width:99%;">
+			
+	`
+	for(let i=1;i<4;i++){
+		el.innerHTML += `
+		<div class="row d-flex justify-content-center align-items-center h-50" style="flex:auto;max-width:545px;">
+			
+				<div class="col col-md-9 col-lg-7 col-xl-6">
+				  <div class="card" style="border-radius: 15px; background-color: #93e2bb;">
+					<div class="card-body p-4 text-black">
+					  <div>
+						<h6 class="mb-4">Exquisite hand henna tattoo</h6>
+						<div class="d-flex align-items-center justify-content-between mb-3">
+						  <p class="small mb-0"><i class="far fa-clock me-2"></i>3 hrs</p>
+						  <p class="fw-bold mb-0">$90</p>
+						</div>
+					  </div>
+					  <div class="d-flex align-items-center mb-4">
+						<div class="flex-shrink-0">
+						  <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-2.webp" alt="Generic placeholder image" class="img-fluid rounded-circle border border-dark border-3" style="width: 70px;">
+						</div>
+						<div class="flex-grow-1 ms-3">
+						  <div class="d-flex flex-row align-items-center mb-2">
+							<p class="mb-0 me-2">@sheisme</p>
+							<ul class="mb-0 list-unstyled d-flex flex-row" style="color: #1B7B2C;">
+							  <li>
+								<i class="fas fa-star fa-xs"></i>
+							  </li>
+							  <li>
+								<i class="fas fa-star fa-xs"></i>
+							  </li>
+							  <li>
+								<i class="fas fa-star fa-xs"></i>
+							  </li>
+							  <li>
+								<i class="fas fa-star fa-xs"></i>
+							  </li>
+							  <li>
+								<i class="fas fa-star fa-xs"></i>
+							  </li>
+							</ul>
+						  </div>
+						  <div>
+							<button type="button" class="btn btn-outline-dark btn-rounded btn-sm" data-mdb-ripple-color="dark">+
+							  Follow</button>
+							<button type="button" class="btn btn-outline-dark btn-rounded btn-sm" data-mdb-ripple-color="dark">See profile</button>
+							<button type="button" class="btn btn-outline-dark btn-floating btn-sm" data-mdb-ripple-color="dark"><i class="fas fa-comment"></i></button>
+						  </div>
+						</div>
+					  </div>
+					  <hr>
+					  <p class="my-4 pb-1">52 comments</p>
+					  <button type="button" class="btn btn-success btn-rounded btn-block btn-lg"><i class="far fa-clock me-2"></i>Book now</button>
+					</div>
+				  </div>
+				 </div>
+				</div>
+			`;
+	}
+	el.innerHTML += `		 </div>
+		</section>`;
+	body.appendChild(el)
+	return false;
+}
+
 function bookSpot(){
 	const spots = () => {
 		let res = ""
@@ -213,45 +287,33 @@ function bookSpot(){
 	<div style="width: 95%;background: #ddd;margin: 1% auto;border-radius: 10px;position:relative;display:flex;flex-direction:row;">
 		<div class="search-booking">
 			
-			<form class="form">
+			<form class="form" onsubmit="showResult()">
 				<label for="search">
-					<input required="" autocomplete="off" placeholder="Parking Location" id="search" type="text">
+					<input  autocomplete="off" placeholder="Parking Location" id="search" type="text">
 					<div class="icon">
 						<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none" data-movable-handle="true"><title>Radio button selected</title><path fill-rule="evenodd" clip-rule="evenodd" d="M12 23c6.075 0 11-4.925 11-11S18.075 1 12 1 1 5.925 1 12s4.925 11 11 11Zm0-8a3 3 0 1 0 0-6 3 3 0 0 0 0 6Z" fill="currentColor"></path>
 						</svg>
 						
 					</div>
-					<button type="reset" class="close-btn">
-						<svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
-							<path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-						</svg>
-					</button>
+					
 				</label>
 				<label for="dates">
-					<input type="date" required="" id="dates" placeholder="Parking Date">
+					<input type="date"  id="dates" placeholder="Parking Date">
 					<div class="icon" style="float:right;">
 						<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><title>Clock</title><path d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1Zm6 13h-8V4h3v7h5v3Z" fill="currentColor"></path>
 						</svg>
 						
 					</div>
-					<button type="reset" class="close-btn">
-						<svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
-							<path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-						</svg>
-					</button>
+					
 				</label>
 				<label for="time">
-					<input type="time" required="" id="time" placeholder="Parking Time">
+					<input type="time" id="time" placeholder="Parking Time">
 					<div class="icon" style="float:right;">
 						<svg width="1em" height="1em" viewBox="0 0 24 24" fill="none"><title>Clock</title><path d="M12 1C5.9 1 1 5.9 1 12s4.9 11 11 11 11-4.9 11-11S18.1 1 12 1Zm6 13h-8V4h3v7h5v3Z" fill="currentColor"></path>
 						</svg>
 						
 					</div>
-					<button type="reset" class="close-btn">
-						<svg viewBox="0 0 20 20" class="h-5 w-5" xmlns="http://www.w3.org/2000/svg">
-							<path clip-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" fill-rule="evenodd"></path>
-						</svg>
-					</button>
+					
 				</label>
 				<label for="dates">
 					<button type="submit" class="submit-btn">
@@ -312,11 +374,10 @@ function bookSpot(){
 	document.getElementById("search-map").classList.add("show-full");
 }
 
-window.addEventListener("hashchange",(e)=>{
+
+function hashChange(){
 	
-	const newUrl = e.newURL;
-	const oldUrl = e.oldURL;
-	let hash =  newUrl.replace(oldUrl,"");
+	let hash =  window.location.hash;
 	hash = hash.replace("#","");
 	if(hash.includes("transactions")){
 		bookingHistory();
@@ -331,4 +392,8 @@ window.addEventListener("hashchange",(e)=>{
 	}else{
 		userDashboard();
 	}
+}
+window.addEventListener("hashchange",(e)=>{
+	hashChange()
 })
+hashChange()

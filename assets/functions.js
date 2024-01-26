@@ -15,8 +15,10 @@ function showTab(n) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n == (x.length - 1)) {
+  if (n >= (x.length - 1)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
+	document.getElementById("nextBtn").setAttribute("type", "Submit");
+	document.getElementById("nextBtn").removeAttribute("onclick");
   } else {
     document.getElementById("nextBtn").innerHTML = "Next";
   }
@@ -28,6 +30,7 @@ function nextPrev(n) {
   // This function will figure out which tab to display
   var x = document.getElementsByClassName("tabs");
   // Exit the function if any field in the current tab is invalid:
+  
   if (n == 1 && !validateForm()) return false;
   // Hide the current tab:
   x[currentTab].style.display = "none";
@@ -84,6 +87,18 @@ window.addEventListener("load",startFunction);
 function addParking(){
 	addnewPage()
 	
+}
+
+const loadActivity = () =>{
+	res = `<ul class="setting-options">`
+	const activity = [1,2,3,4]
+	for(const a of activity){
+		res+=`
+			<li value="slot" onclick="newModal(this.value)">Add Slot </li>
+		`;
+	}
+	res += "</ul>"
+	return res
 }
 
 function newParking(){
@@ -155,16 +170,13 @@ function parkingMap(){
 				
 			</div>
 		</div>
-		<div class="map-settings map-row" id="map-settings">
+		<div class="map-settings map-row" >
 			<div class="parking-header">
-				<h4>Settings</h4>
+				<h4>Recent Activity</h4>
 				
 			</div>
-			<div class="settings-body" id="content">
-				<ul class="setting-options">
-					<li value="path" onclick="newContext(this.value)">Add Path </li>
-					<li value="slot" onclick="newSlot(this.value)">Add Slot </li>
-				</ul>
+			<div class="settings-body" id="map-settings">
+				${loadActivity()}
 			</div>
 		</div>
 	</div>
@@ -178,6 +190,7 @@ function parkingMap(){
 		}
 	})
 	loadMap()
+	
 }
 
 function newSlot(){
@@ -245,41 +258,83 @@ function loadMap(){
 	
 	$(document).on('click', '.radio-button', function(e) {
 		const el = e.target.parentElement
-		showAction(el.children[0].children[0])
+		
 		showContent(e.target)
 	});
 	container.setAttribute("style","width:99%;height:586px;box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;")
 }
 
 function showContent(el){
-	const content = document.getElementById("content")
-	content.innerHTML = `
-	
-		<div style="width:100%;">
-			  <div class="p-3" style="background-color: #eee;">
-				<span class="fw-bold">Order Recap</span>
-				 <div class="d-flex justify-content-between mt-2">
-				  <span>Booking ID </span> <span>${el.id}</span>
-				</div>
-				<div class="d-flex justify-content-between mt-2">
-				  <span class="lh-sm">Text here   </span>
-				  <span>$40.00</span>
-				</div>
-				<hr />
-				<div class="d-flex justify-content-between mt-2">
-				  <span>Text here </span> <span>$71.76</span>
-				</div>
-				<div class="d-flex justify-content-between mt-2">
-				  <span>Text here </span> <span>$71.76</span>
-				</div>
-				<hr />
-				<div class="d-flex justify-content-between mt-2">
-				  <span>Text here </span> <span class="text-success">$85.00</span>
-				</div>
-			  </div>
-			</div>
+	let content 
+	content = `
+		<div class="card-body p-4">
+            <div class="d-flex justify-content-between align-items-center mb-4">
+              <p class="lead fw-normal mb-0" style="color: #a8729a;">Detail</p>
+              <p class="small text-muted mb-0">Slot ID : 1KAU9-84UIL</p>
+            </div>
+            <div class="card shadow-0 border mb-4" style="min-width:95%;">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-md-2">
+                    <img src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/Products/13.webp"
+                      class="img-fluid" alt="Phone">
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0">KCA 532D</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">White</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">Status: parked</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">Rate: Flat</p>
+                  </div>
+                  <div class="col-md-2 text-center d-flex justify-content-center align-items-center">
+                    <p class="text-muted mb-0 small">KES 499</p>
+                  </div>
+                </div>
+                <hr class="mb-4" style="background-color: #e0e0e0; opacity: 1;">
+                <div class="row d-flex align-items-center">
+                  <div class="col-md-2">
+                    <p class="text-muted mb-0 small">Track time</p>
+                  </div>
+                  <div class="col-md-10">
+                    <div class="progress" style="height: 6px; border-radius: 16px;">
+                      <div class="progress-bar" role="progressbar"
+                        style="width: 65%; border-radius: 16px; background-color: #a8729a;" aria-valuenow="65"
+                        aria-valuemin="0" aria-valuemax="100"></div>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+
+            <div class="d-flex justify-content-between pt-2">
+              <p class="fw-bold mb-0">Order Details</p>
+              <p class="text-muted mb-0"><span class="fw-bold me-4">Total</span> $898.00</p>
+            </div>
+
+            <div class="d-flex justify-content-between pt-2">
+              <p class="text-muted mb-0">Invoice Number : 788152</p>
+              <p class="text-muted mb-0"><span class="fw-bold me-4">Discount</span> $19.00</p>
+            </div>
+
+            <div class="d-flex justify-content-between">
+              <p class="text-muted mb-0">Invoice Date : 22 Dec,2019</p>
+              <p class="text-muted mb-0"><span class="fw-bold me-4">GST 18%</span> 123</p>
+            </div>
+
+            <div class="d-flex justify-content-between mb-5">
+              <p class="text-muted mb-0">Booking ID : 18KU-62IIK</p>
+              
+            </div>
+          </div>
 	`;
-	
+	newModal(content)
 }
 
 function showAction(el){
@@ -294,7 +349,7 @@ function parkingPage(){
 	const body = document.getElementById("page-content");
 	body.innerHTML =`
 		<div class="newcontainer" id="container">
-		<div class="contentbox flexcontainer">
+		<div class="contentbox flexcontainer" style="position:absolute;left:5%;top:5%;">
 			<div class="contenttop rowcontainer">
 				<div class="accountselect">
 					<div class="dropdown">
@@ -310,7 +365,7 @@ function parkingPage(){
 					</div>
 				</div>
 				<div class="accountsettings">
-					<button class="setting-btn" title="account settings" onclick="newModal('settings')">
+					<button class="setting-btn" title="account settings" onclick="accountSettings()">
 					  <span class="bar bar1"></span>
 					  <span class="bar bar2"></span>
 					  <span class="bar bar1"></span>
@@ -387,7 +442,7 @@ const newaddform = ()=>{
 			<!-- One "tab" for each step in the form: -->
 			<div class="tabs">Name:
 			  <p><input placeholder="Parking name..." oninput="this.className = ''"></p>
-			  <p><input placeholder="Other name..." oninput="this.className = ''"></p>
+			  <p><input placeholder="Description..." oninput="this.className = ''"></p>
 			</div>
 
 			<div class="tabs">Contact Info:
@@ -401,16 +456,16 @@ const newaddform = ()=>{
 			  <p>Rate value<input placeholder="" oninput="this.className = ''"></p>
 			</div>
 
-			<div class="tabs">Login Info:
-			  <p><input placeholder="Username..." oninput="this.className = ''"></p>
-			  <p><input placeholder="Password..." oninput="this.className = ''"></p>
+						
+			<div class="tabs">
+				${newformdata()}
 			</div>
 
 			<div style="overflow:auto;">
-			  <div style="float:right;">
-			  <button type="button" id="cancelBtn" onclick="location.hash='dashboard'">Cancel</button>
-				<button type="button" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
-				<button type="button" id="nextBtn" onclick="nextPrev(1)">Next</button>
+			  <div style="width:99%;display:flex;align-items:center;">
+			  <button type="button" class="button-6" id="cancelBtn" onclick="location.href='admin.html#dashboard'">Cancel</button>
+				<button type="button" class="button-6" id="prevBtn" onclick="nextPrev(-1)">Previous</button>
+				<button type="button" class="button-6" id="nextBtn" onclick="nextPrev(1)">Next</button>
 			  </div>
 			</div>
 
@@ -429,10 +484,7 @@ const newaddform = ()=>{
 
 const newformdata = ()=>{
 	res = `
-		<div class="container">
-			  <div class="card cardcontainer cart">
-				<label class="title">CHECKOUT</label>
-				<div class="steps">
+			<div class="steps">
 				  <div class="stepp">
 					<div>
 					  <span class="floatright"><button onclick="newModal('address')"> Select</button></span>
@@ -450,39 +502,18 @@ const newformdata = ()=>{
 					<hr>
 					<div class="promo">
 					  <span>No of Slots available?</span>
-					  <form class="form">
-						<input type="number" placeholder="Enter" min="1" value="5" class="input_field">
-						<button type="button">Apply</button>
-					  </form>
+					  
+						<input type="number" id="slots" placeholder="Enter" min="1" value="5" class="input_field">
+					
 					</div>
 					<hr>
-					<div class="payments">
-					  <span>SUMMARY</span>
-					  <div class="details">
-						<span>Name:</span>
-						<span class="">NAIROBI CBD</span>
-						<span>Rate:</span>
-						<span>KES 240.00</span>
-						<span>Type:</span>
-						<span>Flat</span>
-						<span>Tax:</span>
-						<span>$30.40</span>
-					  </div>
-					</div>
-					<hr>
+					
+					
 					<div class="checkout">
-						<div class="footerz">
-						  
-						  <button class="checkout-btn">Save</button>
-						  <button class="checkout-btn cancel">Cancel</button>
-						</div>
+						
 					</div>
 				  </div>
 				</div>
-			  </div>
-
-			  
-			</div>
 	`
 	return res;
 }
@@ -505,28 +536,193 @@ function addnewPage() {
 					${newaddform()}
 				</div>
 				<div class="rowbox checkdetails">
-					${newformdata()}
+					
+					
 				</div>
+				
 			</div>	
 		</div>
   `;
   showTab(currentTab);
  }
  
+function accountSettings(){
+	const body = document.getElementById("page-content");
+	body.innerHTML =`
+		<div class="newcontainer" id="container">
+		<div class="flexcontainer" style="position:absolute;left:5%;top:5%;width:65%;">
+				<div class="rowcontainer">
+				<div class="card-style account-page__top">
+					<div class="account-page__top-about">
+					
+						<div class="account-page__logo">
+							<div class="account-page__icon i-acc i-acc--stand"></div>
+						</div>
+						<div class="account-page__info">
+							<div class="account-page__name">
+								<span class="account-page__name-account">
+									KILELESHWA PARKING
+								</span>
+								<div class="light-link account-page__rename" onclick="editName()">
+								</div>
+							</div>
+							<div class="account-page__balance">
+								<div class="account-page__balance-money">
+									<span>KES 545</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					
+					<div class="account-page__top-info">
+						<div class="account-page__button-box ng-star-inserted">
+							<div class="account-page__action-buttons ng-star-inserted">
+								<div class="account-page__button-wrapper">
+									<btn type="button"  blueborder="true" class="account-page__button account-page__button--action" tabindex="0">
+									<button class="button button--border button-6" type="button" style="transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;">
+									<spantranslate="account.link.withdraw" class="account-page__button-text">Map</span>
+									</button>
+									</btn>
+								</div>
+								<div class="account-page__button-wrapper">
+									<btn  type="button"  class="account-page__button account-page__button--action" tabindex="0">
+									<button class="button button-6" type="button" style="transition: background-color 0.2s ease-in-out 0s, color 0.2s ease-in-out 0s, border-color 0.2s ease-in-out 0s;text-align:center;color:red;">
+									<span translate="account.link.deposit" class="account-page__button-text">Delete</span>
+									</button>
+									</btn>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+				</div>
+				
+				<div class="rowcontainer">
+					<div class="card-style account-page__funds">
+						<div class="card-style account-page__funds-amount">
+							<div class="card-style account-page__funds-name">
+								<span>Occupied</span>
+							</div>
+							<div class="card-style account-page__funds-info">
+								<span>24</span>
+							</div>
+						</div>
+						<div class="card-style account-page__funds-amount">
+							<div class="card-style account-page__funds-name">
+								<span>Available</span>
+							</div>
+							<div class="card-style account-page__funds-info">
+								<span>4</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row-header">Description</div>
+				
+				<div class="rowcontainer">
+					<div class="card-style account-page__description">
+						<div class="account-page__description-name">
+							<span >Description</span>
+						</div>
+						<div class="account-page__commentary">
+							<span class="light-link account-page__edit" onclick="newDescription()">Add description</span>
+						</div>
+					</div>
+				</div>
+		</div>
+		<div class="flexleft">
+			<div class="row-header">Latest Transactions</div>
+		<div>
+		</div>
+	`;
+}
+
+function newDescription(){
+	const body =document.body;
+	let id = Math.floor(Math.random() * 999);
+	id = ""+id
+	const el = document.createElement("div")
+	el.setAttribute("id",id)
+	el.innerHTML = `
+	
+	<div class="modal__content">
+	<h1 translate="account-popup.title-rename" class="modal__title">Account Description</h1>
+	<form novalidate="" class="ng-pristine ng-invalid ng-touched">
+	<div class="form-group"><div  class="form-field form-field--border-radius">
+	<app-form-field  class="ng-star-inserted" style="">
+	<div class="form-field form-field--border-radius ng-star-inserted">
+	<div _ngcontent-fbs-cabinet-global-c164="" class="modal__row modal__row--small-text ng-star-inserted">
+	<label _ngcontent-fbs-cabinet-global-c164="" for="name" translate="account-popup.field.name" class="">New Description</label>
+	<span _ngcontent-fbs-cabinet-global-c164="" translate="account-popup.label.symbols-left">Characters left: 40</span>
+	</div>
+		<textarea type="text" id="comment" formcontrolname="comment" rows="3" autocomplete="comment" class="form-control ng-pristine ng-invalid ng-star-inserted ng-touched" maxlength="255" placeholder="Add a description">            
+		</textarea>
+	
+	</div>
+	</app-form-field>
+	</div></div><div class="actions-wrapper actions-wrapper--popup">
+	<button class="account-button" type="submit"  translate="account-popup.button.confirm" >Confirm</button>
+	<button  type="button" onclick="document.getElementById(${id}).remove()"  translate="account-popup.button.cancel" class="link button--link">Cancel</button></div>
+	</form></div>
+	`
+	el.setAttribute("class","floating")
+	body.appendChild(el)
+}
+
+function editName(){
+	const body =document.body;
+	let id = Math.floor(Math.random() * 999);
+	id = ""+id
+	const el = document.createElement("div")
+	el.setAttribute("id",id)
+	el.innerHTML = `
+	
+	<div class="modal__content">
+	<h1 translate="account-popup.title-rename" class="modal__title">Rename account</h1>
+	<form novalidate="" class="ng-pristine ng-invalid ng-touched">
+	<div class="form-group"><div  class="form-field form-field--border-radius">
+	<app-form-field  class="ng-star-inserted" style="">
+	<div class="form-field form-field--border-radius ng-star-inserted">
+	<div _ngcontent-fbs-cabinet-global-c164="" class="modal__row modal__row--small-text ng-star-inserted">
+	<label _ngcontent-fbs-cabinet-global-c164="" for="name" translate="account-popup.field.name" class="">New account name</label>
+	<span _ngcontent-fbs-cabinet-global-c164="" translate="account-popup.label.symbols-left">Characters left: 40</span>
+	</div><input type="text" id="name" formcontrolname="name" autocomplete="name" class="form-control ng-pristine ng-invalid ng-star-inserted ng-touched" maxlength="40" placeholder="New account name">
+	</div>
+	</app-form-field>
+	</div></div><div class="actions-wrapper actions-wrapper--popup">
+	<button class="account-button" type="submit"  translate="account-popup.button.confirm" >Confirm</button>
+	<button  type="button" onclick="document.getElementById(${id}).remove()"  translate="account-popup.button.cancel" class="link button--link">Cancel</button></div>
+	</form></div>
+	`
+	el.setAttribute("class","floating")
+	body.appendChild(el)
+}
+ 
 function newModal(flow){
 	const body =document.getElementById("page-content");
 	let id = Math.floor(Math.random() * 999);
 	id = ""+id
 	const el = document.createElement("div")
-	el.setAttribute("class","floating")
+	el.setAttribute("class","bookingdetail")
 	el.setAttribute("id",id)
 	el.innerHTML = `
-		<div>
-			<div class="floatheader">Title: ${flow.toUpperCase()}</div>
-			<div class="floatheaderfooter">
-				<button class="button-25" role="button" onclick="document.getElementById(${id}).remove()">Cancel</button>
-			</div>
-		</div>
+		<section class="vh-100">
+			  <div class="container py-5 h-100 w-100">
+				<div class="row d-flex justify-content-center align-items-center" style="width:568px;position:fixed;right:15%;">
+				  <div class="col-md-12 col-xl-4">
+
+					<div class="card" style="border-radius: 15px;min-width:568px;position:relative;">
+						${flow}
+						
+						<div class="floatheaderfooter">
+							<button class="button-6" role="button" onclick="document.getElementById(${id}).remove()">Cancel</button>
+						</div>
+					</div>
+					
+				  </div>
+				</div>
+			  </div>
+		</section>
 	`
 	body.appendChild(el)
  }

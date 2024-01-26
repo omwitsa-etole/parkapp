@@ -69,9 +69,9 @@ function towerPage(){
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr class="handlerDetails">
 									<td>
-										<a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2112</a>
+										<a href="#" class="fw-medium link-primary">#VZ2112</a>
 									</td>
 									<td>
 										<div class="d-flex align-items-center">
@@ -175,6 +175,9 @@ function towerPage(){
 			block.setAttribute("style","display:none;height:1vh;")
 		}
 	})
+	$(".handlerDetails").click(()=>{
+		staffDetail()
+	})
 }
 
 function handlerPage(){
@@ -210,7 +213,7 @@ function handlerPage(){
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
+								<tr class="handlerDetails">
 									<td>
 										<a href="apps-ecommerce-order-details.html" class="fw-medium link-primary">#VZ2112</a>
 									</td>
@@ -315,7 +318,11 @@ function handlerPage(){
 			block.setAttribute("style","display:none;height:1vh;")
 		}
 	})
+	$(".handlerDetails").click(()=>{
+		staffDetail()
+	})
 }
+
 
 function hashChange(){
 	let hash =  window.location.hash;
@@ -344,6 +351,8 @@ function hashChange(){
 		parkingPage();
 	}else if(hash.includes("addnew")){
 		addnewPage();
+	}else if(hash.includes("profile")){
+		location.href = "profile.html"
 	}else{
 		adminDashboard();
 	}
@@ -354,3 +363,4 @@ window.addEventListener("hashchange",(e)=>{
 })
 
 hashChange();
+
