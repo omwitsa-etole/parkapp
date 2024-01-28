@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="zxx" class="js">
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Softnio">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        
+       
+        <title>User Dashboard</title>
+        <link rel="stylesheet" href="assets/profile.css" id="layoutstyle">
+		<script src="https://kit.fontawesome.com/c63faa1f51.js" crossorigin="anonymous"></script>
+		<link rel="stylesheet" href="assets/css/bootstrap.min.css">
+		  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+		  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+        <style>
+
+.button-4 {
+  appearance: none;
+  background-color: #FAFBFC;
+  border: 1px solid rgba(27, 31, 35, 0.15);
+  border-radius: 6px;
+  box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+  box-sizing: border-box;
+  color: #24292E;
+  cursor: pointer;
+  display: inline-block;
+  font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 20px;
+  list-style: none;
+  padding: 6px 16px;
+  position: relative;
+  transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: middle;
+  white-space: nowrap;
+  word-wrap: break-word;
+  margin-left:10%;
+  margin-top:2%;
+}
+
+.button-4:hover {
+  background-color: #F3F4F6;
+  text-decoration: none;
+  transition-duration: 0.1s;
+}
+
+.button-4:disabled {
+  background-color: #FAFBFC;
+  border-color: rgba(27, 31, 35, 0.15);
+  color: #959DA5;
+  cursor: default;
+}
+
+.button-4:active {
+  background-color: #EDEFF2;
+  box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+  transition: none 0s;
+}
+
+.button-4:focus {
+  outline: 1px transparent;
+}
+
+.button-4:before {
+  display: none;
+}
+
+.button-4:-webkit-details-marker {
+  display: none;
+}
+</style>
+    </head>
+ <body class="page-user">
+<section style="background-color: #eee;">
+<button class="button-4" role="button" onclick="goBack()">Back</button>
+<button class="button-4" role="button" style="position:absolute;top:2%;right:10%;">Logout</button>
+  <div class="container py-5">
+    
+    <div class="row">
+      <div class="col-lg-4">
+        <div class="card mb-4">
+          <div class="card-body text-center">
+            <img src="assets/images/users/avatar-1.jpg" alt="avatar"
+              class="rounded-circle img-fluid" style="width: 150px;">
+            <h5 class="my-3">Park Name</h5>
+            <p class="text-muted mb-1">Description about</p>
+            <p class="text-muted mb-4">Address, CA</p>
+            <div class="d-flex justify-content-center mb-2">
+              <button type="button" class="btn btn-primary">Follow</button>
+              <button type="button" class="btn btn-outline-primary ms-1" onclick="chatWindow()">Message</button>
+            </div>
+          </div>
+        </div>
+        <div class="card mb-4 mb-lg-0">
+			<h4>Links</h4>
+          <div class="card-body p-0">
+            <ul class="list-group list-group-flush rounded-3">
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fas fa-globe fa-lg text-warning"></i>
+                <p class="mb-0">https://mdbootstrap.com</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-github fa-lg" style="color: #333333;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-twitter fa-lg" style="color: #55acee;"></i>
+                <p class="mb-0">@mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-instagram fa-lg" style="color: #ac2bac;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+              <li class="list-group-item d-flex justify-content-between align-items-center p-3">
+                <i class="fab fa-facebook-f fa-lg" style="color: #3b5998;"></i>
+                <p class="mb-0">mdbootstrap</p>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-8">
+        <div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Full Name</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Johnatan Smith</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Email</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">example@example.com</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Phone</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(097) 234-5678</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Mobile</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">(098) 765-4321</p>
+              </div>
+            </div>
+            <hr>
+            <div class="row">
+              <div class="col-sm-3">
+                <p class="mb-0">Address</p>
+              </div>
+              <div class="col-sm-9">
+                <p class="text-muted mb-0">Bay Area, San Francisco, CA</p>
+              </div>
+            </div>
+          </div>
+        </div>
+		
+		<div class="card mb-4">
+          <div class="card-body">
+            <div class="row">
+				<label>
+					<h4>Charge Rate</h4>
+					<div class="progress">
+						
+					  <div class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-label="Animated striped example" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 55%"></div>
+					</div>
+				</label>
+				<label>
+					<h4>Customer Satisfaction</h4>
+					<div class="progress">
+						
+					  <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-label="Animated striped example" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%"></div>
+					</div>
+				</label>
+				<label>
+					<h4>Customer Complaints</h4>
+					<div class="progress">
+						
+					  <div class="progress-bar progress-bar-striped progress-bar-animated bg-danger" role="progressbar" aria-label="Animated striped example" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 25%"></div>
+					</div>
+				</label>
+			</div>
+          </div>
+        </div>
+		
+		<div class="card mb-4">
+		  <h5 class="card-header">User Activity Timeline</h5>
+		  <div class="card-body">
+			<ul class="timeline">
+			  <li class="timeline-item timeline-item-transparent">
+				<span class="timeline-point-wrapper"><span class="timeline-point timeline-point-primary"></span></span>
+				<div class="timeline-event">
+				  <div class="timeline-header mb-1">
+					<h6 class="mb-0">12 Invoices have been paid</h6>
+					<small class="text-muted">12 min ago</small>
+				  </div>
+				  <p class="mb-2">Invoices have been paid to the company</p>
+				  
+				</div>
+			  </li>
+			  <li class="timeline-item timeline-item-transparent">
+				<span class="timeline-point-wrapper"><span class="timeline-point timeline-point-warning"></span></span>
+				<div class="timeline-event">
+				  <div class="timeline-header mb-1">
+					<h6 class="mb-0">Client Meeting</h6>
+					<small class="text-muted">45 min ago</small>
+				  </div>
+				  <p class="mb-2">Project meeting with john @10:15am</p>
+				  
+				</div>
+			  </li>
+			 
+			  <li class="timeline-item timeline-item-transparent">
+				<span class="timeline-point-wrapper"><span class="timeline-point timeline-point-success"></span></span>
+				<div class="timeline-event">
+				  <div class="timeline-header mb-1">
+					<h6 class="mb-0">Design Review</h6>
+					<small class="text-muted">5 days Ago</small>
+				  </div>
+				  <p class="mb-0">Weekly review of freshly prepared design for our new app.</p>
+				</div>
+			  </li>
+			  <li class="timeline-end-indicator">
+				<i class="bx bx-check-circle"></i>
+			  </li>
+			</ul>
+		  </div>
+		</div>
+		
+        
+      </div>
+    </div>
+  </div>
+</section>
+<script src="js/jquery.js"></script>
+<script src="assets/profile.js"></script>
+<script>
+function goBack(){
+	
+	window.location.href='admin.html'
+}
+</script>
+</body>

@@ -1,0 +1,686 @@
+.setting-btn {
+  width: 65%;
+  height: 3.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  background-color: rgb(129, 110, 216);
+  border-radius: 10px;
+  cursor: pointer;
+  border: none;
+  box-shadow: 0px 0px 0px 2px rgb(212, 209, 255);
+}
+.bar {
+  width: 50%;
+  height: 2px;
+  background-color: rgb(229, 229, 229);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  border-radius: 2px;
+}
+.bar::before {
+  content: "";
+  width: 2px;
+  height: 2px;
+  background-color: rgb(126, 117, 255);
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid white;
+  transition: all 0.3s;
+  box-shadow: 0px 0px 5px white;
+}
+.bar1::before {
+  transform: translateX(-4px);
+}
+.bar2::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar1::before {
+  transform: translateX(4px);
+}
+.setting-btn:hover .bar2::before {
+  transform: translateX(-4px);
+}
+
+.dropbtn {
+  background-color: white;
+  text-align: left;
+  color: black;
+  padding: 16px;
+  font-size: 16px;
+  width:95%;
+  cursor: pointer;
+  position: relative;
+  border: .25px solid;
+  
+}
+
+/* Dropdown button on hover & focus */
+.dropbtn:hover, .dropbtn:focus {
+  background-color: ;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
+  width:99%;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f1f1f1;
+  min-width: 95%;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  text-align: left;
+  display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #ddd;}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+
+.button-6 {
+  align-items: center;
+  background-color: #FFFFFF;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  border-radius: .25rem;
+  box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+  box-sizing: border-box;
+  color: rgba(0, 0, 0, 0.85);
+  cursor: pointer;
+  display: inline-flex;
+  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  justify-content: left;
+  line-height: 1.25;
+  margin: 0;
+  min-height: 4rem;
+  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
+  position: relative;
+  text-decoration: none;
+  transition: all 250ms;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  vertical-align: baseline;
+  
+}
+
+.button-6:hover,
+.button-6:focus {
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+  color: rgba(0, 0, 0, 0.65);
+}
+
+.button-6:hover {
+  transform: translateY(-1px);
+}
+
+.button-6:active {
+  background-color: #F0F0F1;
+  border-color: rgba(0, 0, 0, 0.15);
+  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+  color: rgba(0, 0, 0, 0.65);
+  transform: translateY(0);
+}
+.newcontainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position:relative;
+  width:100%;
+  height:100%;
+  background:#ddd;
+}
+
+.contentbox{
+	box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px, rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+	width:624px;
+    min-height:50%;
+	background:white;
+	border-radius:4px;
+}
+
+.flexcontainer{
+	display: flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+	gap:9px;
+	
+}
+.rowcontainer{
+	flex:;
+	width:100%;
+	position:relative;
+	
+}
+.contenttop{
+	height:56px;
+	width:100%;
+	margin-top:2%;
+}
+.accountselect{
+	width:75%;
+	margin-left:2%;
+}
+.accountsettings{
+	width:21%;
+	position:absolute;
+	right:1%;
+	top:1%;
+}
+.selecticon{
+	position:absolute;
+	left:99%;
+}
+.actions{
+	height:56px;
+	margin-top:2%;
+	width:95%;
+	margin-left:2%;
+}
+.bookingstitle{
+	font-size: 16px;
+  font-weight: 300;
+}
+.bookingsvalue{
+	font-size: 31px;
+  font-weight: 900 bold;
+}
+.buttons{
+	position:absolute;
+	right:1%;
+	top:1%;
+}
+.buttons button{
+	display:inline;
+	margin-right:9px;
+	max-height:3.2rem;
+}
+.headmenu{
+	width:89%;
+	margin-left:5%;
+}
+.headmenu li{
+	display:inline-block;
+	margin-left:9px;
+	font-size: 14px;
+	font-weight: bold;
+	color: blue;
+	cursor:pointer;
+	text-decoration:none;
+}
+.headmenu li:hover{
+	text-decoration:underline;
+}
+.accountviewer{
+	height:146px;
+	
+	width:95%;
+	margin-left:2%;
+}
+.viewerlist{
+	width:100%;
+	height:95%;
+	display:flex;
+	flex-direction:column;
+	flex-wrap:wrap;
+}
+.viewerlist li{
+	text-decoration:none;
+	width:45%;
+	position:relative;
+	flex:auto;
+	margin-top:3%;
+	display:block;
+}
+.viewervalue{
+	font-size: 16px;
+  font-weight: 900;
+  position:absolute;
+	right:1%;
+	top:1%;
+	color:#ADE8F4;
+}
+.viewertitle{
+	font-size: 16px;
+  font-weight: 100 ;
+  
+}
+.addnew{
+	position:absolute;
+	left:0;
+	top:100%;
+	width:99%;
+	background:white;
+	color:black;
+	display:flex;
+	align-items:center;
+	cursor:pointer;
+}
+.cancel{background-image:linear-gradient(red,#23232b);}
+
+#regForm {
+  background-color: #ffffff;
+  margin: 1% auto;
+  padding: 40px;
+  width: 70%;
+  min-height: 350px;
+  min-width: 300px;
+  height: auto;
+}
+
+/* Style the input fields */
+.newform input, .newform select {
+  padding: 10px;
+  width: 100%;
+  font-size: 17px;
+  font-family: Raleway;
+  border: 1px solid #aaaaaa;
+}
+
+/* Mark input boxes that gets an error on validation: */
+.newform input.invalid {
+  background-color: #ffdddd;
+}
+
+/* Hide all steps by default: */
+.tabs {
+  display: none;
+}
+
+/* Make circles that indicate the steps of the form: */
+.step {
+  height: 15px;
+  width: 15px;
+  margin: 0 2px;
+  background-color: #bbbbbb;
+  border: none;
+  border-radius: 50%;
+  display: inline-block;
+  opacity: 0.5;
+}
+
+/* Mark the active step: */
+.step.active {
+  opacity: 1;
+}
+
+/* Mark the steps that are finished and valid: */
+.step.finish {
+  background-color: #04AA6D;
+}
+
+.floating{
+	position:fixed;top:50%;left:50%;
+	min-width:288px;min-height:288px;
+	transform:translate(-50%,-50%);
+	box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+	z-index:4;
+	background:white;
+	display:grid;
+	place-items:center;
+	overflow:auto;
+}
+@media only screen and (max-width: 600px) {
+	.floating{width:80%;}
+}
+.floatheader{
+	position:absolute;
+	left:0;
+	top:1%;
+	width:99%;
+}
+.floatfooter{
+	position:absolute;
+	left:0;
+	bottom:1%;
+	width:99%;
+}
+
+.account-page__top, .account-page__funds, .account-page__description{
+    display: flex;
+    row-gap: 16px;
+    margin-bottom: 8px;
+    padding: 16px;
+    flex-direction: column;
+}
+.account-page__funds{
+	margin-top: 8px;
+}
+.card-style {
+    background: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 1px #e6e6e6;
+    transition: box-shadow .3s ease-in-out;
+	height:25%;
+}
+.account-page__top-about {
+    display: flex;
+    flex-grow: 1;
+}
+.account-page__logo {
+    display: flex;
+    align-items: center;
+}
+.account-page__icon.i-acc {
+    position: relative;
+    width: 40px;
+    height: 40px;
+}
+
+.i-acc--stand {
+    background-image: url(./images/users/avatar-1.jpg);
+}
+.account-page__info {
+    display: grid;
+    gap: 4px;
+    margin: 0 8px;
+}
+
+.account-page__name {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+	margin-bottom: 0;
+    font-size: 14px;
+}
+
+.account-page__rename {
+    display: flex;
+    margin-left: 4px;
+    width: 16px;
+    height: 16px;
+    min-width: 16px;
+    background: url(./images/icons/edit.svg) no-repeat center;
+	cursor:pointer;
+}
+.account-page__name-account {
+    width: auto;
+    word-break: break-word;
+    color: #666;
+}
+
+.account-page__balance {
+    display: flex;
+    justify-content: space-between;
+}
+
+.account-page__balance-money {
+    display: flex;
+    color: #000;
+    font-size: 16px;
+}
+
+@media (min-width: 768px){
+	.account-page__top {
+		display: grid;
+		grid-template-columns: 1fr auto;
+		padding: 24px;
+		align-items: center;
+	}
+	.account-page__top-info {
+		padding-top: 0;
+		flex-direction: row;
+		align-items: center;
+		border: none;
+	}
+	.account-page__top-about {
+		align-items: center;
+	}
+	.account-page__icon.i-acc {
+		width: 64px;
+		height: 64px;
+	}
+	.account-page__balance {
+		flex-direction: column;
+		flex-shrink: 0;
+	}
+	.account-page__button-wrapper {
+		width: auto;
+		min-width: 0;
+	}
+}
+@media (min-width: 768px)
+{
+	.account-page__button--action .button {
+		padding: 4px 8px;
+		width: 88px;
+		min-width: max-content;
+	}
+	.account-page__funds-amount:nth-child(1) {
+		padding-top: 24px;
+	}
+	.account-page__funds-amount {
+		padding: 16px 24px;
+	}
+}
+
+.account-page__funds-amount:nth-child(1) {
+	padding-top:16px;
+}
+
+.account-page__funds-amount {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 16px;
+}
+.account-page__funds-name {
+    display: flex;
+    align-items: center;
+    line-height: 1.1;
+}
+.account-page__funds-info {
+    line-height: 18px;
+}
+
+.account-page__name {
+    margin-bottom: 0;
+    font-size: 14px;
+}
+
+.account-page__top-info {
+    display: flex;
+    flex-direction: column;
+}
+.account-page__action-buttons {
+    display: flex;
+    flex-basis: 50%;
+    justify-content: flex-end;
+    gap: 8px;
+}
+.account-page__button-wrapper {
+    width: 100%;
+    min-width: calc(50% - 4px);
+}
+.account-page__button--action {
+    display: flex;
+    height: 100%;
+}
+
+.modal__content {
+    position: relative;
+    text-align: center;
+}
+.modal__title {
+    margin-bottom: 4px;
+}
+.modal__content h1, .title-xl {
+    font-size: 18px;
+	line-height: 1.5;
+    font-weight: 400;
+    margin: 0 0 16px;
+}
+.form-group {
+    margin-top: -16px;
+}
+
+@media (min-width: 544px){
+.actions-wrapper--column, .actions-wrapper--popup {
+    width: auto;
+}}
+.actions-wrapper--column, .actions-wrapper--popup {
+    flex-direction: column;
+    width: 100%;
+}
+@media (min-width: 544px){
+.actions-wrapper {
+    flex-direction: row;
+}
+}
+.actions-wrapper {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 16px;
+}
+
+
+.account-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px 30px;
+    width: 100%;
+    min-height: 44px;
+    border: none;
+    background: #ff4802;
+    text-align: center;
+    font-size: 14px;
+    text-decoration: none;
+    color: #fff;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color .2s ease-in-out,color .2s ease-in-out,box-shadow .2s ease-in-out;
+}
+.link {
+    position: relative; 
+    padding: 0;
+    color: #0e88e7;
+    border: 0;
+    text-decoration: none;
+    border-bottom: 1px solid transparent;
+     background: none; 
+    cursor: pointer;
+    transition: color,border,.2s ease-out;
+}
+.button--link, .btn--link {
+    margin-top: 20px;
+}
+.form-field--border-radius {
+    border-radius: 4px;
+}
+
+.form-field {
+    position: relative;
+    margin-top: 32px;
+}
+.modal__row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.form-field input {
+    min-height: 46px;
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    text-align: start;
+    color: #000;
+    border: 1px solid #f0f0f0;
+    -webkit-appearance: none;
+}
+
+input {
+    line-height: normal;
+}
+.row-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-height: 48px;
+    padding: 8px 16px;
+}
+.account-page__description-name, .account-page__login-name, .account-page__password-name {
+    display: flex;
+    align-items: center;
+    margin-bottom: 8px;
+    font-weight: 700;
+}
+.account-page__commentary {
+    background-color: transparent;
+    border: none;
+    padding: 0;
+    text-align: left;
+    max-width: 100%;
+    word-break: break-all;
+    word-wrap: break-word;
+}
+.account-page__edit {
+    margin-top: 4px;
+}
+.form-field textarea {
+    min-height: 46px;
+    padding: 8px 16px;
+    width: 100%;
+    border-radius: 4px;
+    font-size: 14px;
+    color: #000;
+    border: 1px solid #f0f0f0;
+    resize: none;
+    -webkit-appearance: none;
+}
+textarea {
+    overflow: auto;
+}
+
+@media (min-width: 768px){
+	.card{
+		min-width:85%;
+	}
+}
+
+.notification{
+	position:absolute;
+    z-index: 5;
+	right:1%;
+	bottom:2%;
+	width:65%;
+}
+.notificationclose{
+	position:absolute;
+    right: 2%;
+	cursor:pointer;
+}
+
+button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled), [type=submit]:not(:disabled) {
+    cursor: pointer;
+}
+.btn-label-danger {
+    color: #ff3e1d;
+    border-color: rgba(0,0,0,0);
+    background: #ffe0db;
+}

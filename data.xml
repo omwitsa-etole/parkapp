@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Placemark>
+    <name>Nairobi CBD</name>
+    <description>Parking Location.</description>
+    <Point>
+      <coordinates>-1.315926, 36.8255</coordinates>
+    </Point>
+  </Placemark>
+</kml>

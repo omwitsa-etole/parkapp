@@ -1,0 +1,665 @@
+<html lang="en" data-layout="vertical" data-topbar="light" data-sidebar="light" data-sidebar-size="lg" data-sidebar-image="none" data-preloader="disable" data-bs-theme="light" data-layout-width="fluid" data-layout-position="fixed" data-layout-style="default" data-sidebar-visibility="show"><head>
+
+        <meta charset="utf-8">
+        <title>WePark | Dashboard </title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta content="Premium Multipurpose Admin &amp; Dashboard Template" name="description">
+        <meta content="Themesbrand" name="author">
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="assets/images/favicon.ico">
+
+        <!-- jsvectormap css -->
+        <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css">
+
+        <!-- gridjs css -->
+        <link rel="stylesheet" href="assets/libs/gridjs/theme/mermaid.min.css">
+
+        <!-- Layout config Js -->
+        <script src="assets/js/layout.js"></script>
+        <!-- Bootstrap Css -->
+        <link href="assets/css/bootstrap.min.css" rel="stylesheet" type="text/css">
+        <!-- Icons Css -->
+        <link href="assets/css/icons.min.css" rel="stylesheet" type="text/css">
+        <!-- App Css-->
+        <link href="assets/css/app.min.css" rel="stylesheet" type="text/css">
+        <!-- custom Css-->
+        <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css">
+		<link href="assets/admin.css" rel="stylesheet" type="text/css">
+		<link href="assets/css/analysis..css" rel="stylesheet" type="text/css">
+		<script src="https://kit.fontawesome.com/c63faa1f51.js" crossorigin="anonymous"></script>
+
+
+    <style id="apexcharts-css">
+	
+</style>
+
+<link rel="stylesheet" href="assets/functions.css">
+<link href="assets/account.css" rel="stylesheet" type="text/css">
+
+</head>
+
+    <body class="twocolumn-panel">
+
+        <!-- Begin page -->
+        <div id="layout-wrapper">
+
+            <header id="page-topbar" class="">
+    <div class="layout-width">
+        <div class="navbar-header">
+            <div class="d-flex">
+                <!-- LOGO -->
+                <div class="navbar-brand-box horizontal-logo">
+                    <a href="index.html" class="logo logo-dark">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-dark.png" alt="" height="17">
+                        </span>
+                    </a>
+
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="17">
+                        </span>
+                    </a>
+                </div>
+
+                <button type="button" class="btn btn-sm px-3 fs-16 header-item vertical-menu-btn topnav-hamburger" id="topnav-hamburger-icon">
+                    <span class="hamburger-icon open">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </span>
+                </button>
+
+                <!-- App Search-->
+                <form class="app-search d-none d-md-block">
+                    <div class="position-relative">
+                        <input type="text" class="form-control" placeholder="Search..." autocomplete="off" id="search-options" value="">
+                       
+                        <span class="mdi mdi-close-circle search-widget-icon search-widget-icon-close d-none" id="search-close-options"></span>
+                    </div>
+                    <div class="dropdown-menu dropdown-menu-lg" id="search-dropdown">
+                        <div data-simplebar="init" style="max-height: 320px;"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+                            <!-- item-->
+                            <div class="dropdown-header">
+                                <h6 class="text-overflow text-muted mb-0 text-uppercase">Recent Searches</h6>
+                            </div>
+
+                            <div class="dropdown-item bg-transparent text-wrap">
+                                <a href="index.html" class="btn btn-soft-secondary btn-sm rounded-pill">how to setup <i class="mdi mdi-magnify ms-1"></i></a>
+                                <a href="index.html" class="btn btn-soft-secondary btn-sm rounded-pill">buttons <i class="mdi mdi-magnify ms-1"></i></a>
+                            </div>
+                            <!-- item-->
+                            <div class="dropdown-header mt-2">
+                                <h6 class="text-overflow text-muted mb-1 text-uppercase">Pages</h6>
+                            </div>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="ri-bubble-chart-line align-middle fs-18 text-muted me-2"></i>
+                                <span>Analytics Dashboard</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="ri-lifebuoy-line align-middle fs-18 text-muted me-2"></i>
+                                <span>Help Center</span>
+                            </a>
+
+                            <!-- item-->
+                            <a href="javascript:void(0);" class="dropdown-item notify-item">
+                                <i class="ri-user-settings-line align-middle fs-18 text-muted me-2"></i>
+                                <span>My account settings</span>
+                            </a>
+
+                            <!-- item-->
+                            <div class="dropdown-header mt-2">
+                                <h6 class="text-overflow text-muted mb-2 text-uppercase">Members</h6>
+                            </div>
+
+                            <div class="notification-list">
+                                <!-- item -->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-2.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="m-0">Angela Bernier</h6>
+                                            <span class="fs-11 mb-0 text-muted">Manager</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- item -->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-3.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="m-0">David Grasso</h6>
+                                            <span class="fs-11 mb-0 text-muted">Web Designer</span>
+                                        </div>
+                                    </div>
+                                </a>
+                                <!-- item -->
+                                <a href="javascript:void(0);" class="dropdown-item notify-item py-2">
+                                    <div class="d-flex">
+                                        <img src="assets/images/users/avatar-5.jpg" class="me-3 rounded-circle avatar-xs" alt="user-pic">
+                                        <div class="flex-grow-1">
+                                            <h6 class="m-0">Mike Bunch</h6>
+                                            <span class="fs-11 mb-0 text-muted">React Developer</span>
+                                        </div>
+                                    </div>
+                                </a>
+                            </div>
+                        </div></div></div></div><div class="simplebar-placeholder" style="width: 0px; height: 0px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div></div>
+
+                        <div class="text-center pt-3 pb-1">
+                            <a href="pages-search-results.html" class="btn btn-primary btn-sm">View All Results <i class="fa fa-arrow-right-line ms-1"></i></a>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+            <div class="d-flex align-items-center">
+
+                <div class="dropdown d-md-none topbar-head-dropdown header-item">
+                    <button type="button" class="btn btn-icon btn-topbar btn-ghost-secondary rounded-circle" id="page-header-search-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="bx bx-search fs-22"></i>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-lg dropdown-menu-end p-0" aria-labelledby="page-header-search-dropdown">
+                        <form class="p-3">
+                            <div class="form-group m-0">
+                                <div class="input-group">
+                                    <input type="text" class="form-control" placeholder="Search ..." aria-label="Recipient's username">
+                                    <button class="btn btn-primary" type="submit"><i class="mdi mdi-magnify"></i></button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+
+                
+
+            
+
+                <div class="dropdown ms-sm-3 header-item topbar-user">
+                    <button type="button" class="btn" id="page-header-user-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <span class="d-flex align-items-center">
+                            <img class="rounded-circle header-profile-user" src="assets/images/users/avatar-1.jpg" alt="Header Avatar">
+                            <span class="text-start ms-xl-2">
+                                <span class="d-none d-xl-inline-block ms-1 fw-medium user-name-text">Mustafa Ali</span>
+                                <span class="d-none d-xl-block ms-1 fs-12 user-name-sub-text">Founder</span>
+                            </span>
+                        </span>
+                    </button>
+                    <div class="dropdown-menu dropdown-menu-end">
+                        <!-- item-->
+                        <h6 class="dropdown-header">Welcome Mustafa!</h6>
+                        <a class="dropdown-item" href="profile.html"><i class="mdi mdi-account-circle text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Profile</span></a>
+                        <a class="dropdown-item" href="support.html"><i class="mdi mdi-message-text-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Messages</span></a>
+                        <div class="dropdown-divider"></div>
+                        <a class="dropdown-item" href="#analysis"><i class="mdi mdi-wallet text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Balance : <b>$5971.67</b></span></a>
+                        <a class="dropdown-item" href="settings.html"><span class="badge bg-success-subtle text-success mt-1 float-end">New</span><i class="mdi mdi-cog-outline text-muted fs-16 align-middle me-1"></i> <span class="align-middle">Settings</span></a>
+                        <a class="dropdown-item" href="#auth-logout-basic.html"><i class="mdi mdi-logout text-muted fs-16 align-middle me-1"></i> <span class="align-middle" data-key="t-logout">Logout</span></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- removeNotificationModal -->
+<div id="removeNotificationModal" class="modal fade zoomIn" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="NotificationModalbtn-close"></button>
+            </div>
+            <div class="modal-body">
+                <div class="mt-2 text-center">
+                    <lord-icon src="https://cdn.lordicon.com/gsqxdxog.json" trigger="loop" colors="primary:#f7b84b,secondary:#f06548" style="width:100px;height:100px"></lord-icon>
+                    <div class="mt-4 pt-2 fs-15 mx-4 mx-sm-5">
+                        <h4>Are you sure ?</h4>
+                        <p class="text-muted mx-4 mb-0">Are you sure you want to remove this Notification ?</p>
+                    </div>
+                </div>
+                <div class="d-flex gap-2 justify-content-center mt-4 mb-2">
+                    <button type="button" class="btn w-sm btn-light" data-bs-dismiss="modal">Close</button>
+                    <button type="button" class="btn w-sm btn-danger" id="delete-notification">Yes, Delete It!</button>
+                </div>
+            </div>
+
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal-dialog -->
+</div><!-- /.modal -->
+            <!-- ========== App Menu ========== -->
+            <div class="app-menu navbar-menu" style="background:white;">
+                <!-- LOGO -->
+                <div class="navbar-brand-box">
+                    <!-- Dark Logo-->
+                    <a href="index.html" class="logo logo-dark">
+                       
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="15" style="width:95%;zoom:500%;">
+                        </span>
+                    </a>
+                    <!-- Light Logo-->
+                    <a href="index.html" class="logo logo-light">
+                        <span class="logo-sm">
+                            <img src="assets/images/logo-sm.png" alt="" height="22">
+                        </span>
+                        <span class="logo-lg">
+                            <img src="assets/images/logo-light.png" alt="" height="17">
+                        </span>
+                    </a>
+                    <button type="button" class="btn btn-sm p-0 fs-20 header-item float-end btn-vertical-sm-hover" id="vertical-hover">
+                        <i class="ri-record-circle-line"></i>
+                    </button>
+                </div>
+
+                <div id="scrollbar" data-simplebar="init" class="h-100 simplebar-scrollable-y"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: 100%; overflow: hidden scroll;"><div class="simplebar-content" style="padding: 0px;">
+                    <div class="container-fluid">
+
+                        <div id="two-column-menu">
+                        </div>
+                        <ul class="navbar-nav" id="navbar-nav" data-simplebar="init"><div class="simplebar-wrapper" style="margin: 0px;"><div class="simplebar-height-auto-observer-wrapper"><div class="simplebar-height-auto-observer"></div></div><div class="simplebar-mask"><div class="simplebar-offset" style="right: 0px; bottom: 0px;"><div class="simplebar-content-wrapper" tabindex="0" role="region" aria-label="scrollable content" style="height: auto; overflow: hidden;"><div class="simplebar-content" style="padding: 0px;">
+                            
+                            <li class="nav-item">
+                                <a class="nav-link menu-link collapsed active" href="#dashboard" onclick="adminDashboard()" >
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home icon-dual"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg> 
+									<span data-key="t-dashboards">Dashboard</span>
+                                </a>
+                                
+                            </li> <!-- end Dashboard Menu -->
+                            
+							<li class="nav-item">
+                                <a class="nav-link menu-link collapsed" href="#parkingmap" onclick="parkingMap()" >
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M384 476.1L192 421.2V35.9L384 90.8V476.1zm32-1.2V88.4L543.1 37.5c15.8-6.3 32.9 5.3 32.9 22.3V394.6c0 9.8-6 18.6-15.1 22.3L416 474.8zM15.1 95.1L160 37.2V423.6L32.9 474.5C17.1 480.8 0 469.2 0 452.2V117.4c0-9.8 6-18.6 15.1-22.3z"/></svg>
+									<span data-key="t-dashboards">Parking Status Map</span>
+                                    
+								</a>
+                                
+                            </li>
+							
+							
+							<li class="nav-item">
+                                <a class="nav-link menu-link collapsed" href="#sidebarRevenue" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 576 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 64C28.7 64 0 92.7 0 128V384c0 35.3 28.7 64 64 64H512c35.3 0 64-28.7 64-64V128c0-35.3-28.7-64-64-64H64zm64 320H64V320c35.3 0 64 28.7 64 64zM64 192V128h64c0 35.3-28.7 64-64 64zM448 384c0-35.3 28.7-64 64-64v64H448zm64-192c-35.3 0-64-28.7-64-64h64v64zM288 160a96 96 0 1 1 0 192 96 96 0 1 1 0-192z"/></svg>
+									<span data-key="t-dashboards">Revenue</span>
+                                    
+								</a>
+                                <div class="menu-dropdown collapse show" id="sidebarRevenue" style="">
+                                    <ul class="nav nav-sm flex-column">
+                                        
+                                        <li class="nav-item">
+                                            <a href="#analysis" class="nav-link" data-key="t-job">Analysis</a>
+                                        </li>
+										
+                                    </ul>
+                                </div>
+                            </li>
+							
+														
+							<li class="nav-item">
+                                <a class="nav-link menu-link collapsed" href="#allstaff" data-bs-toggle="collapse" role="button" aria-expanded="true" aria-controls="sidebarStaff">
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M64 32C28.7 32 0 60.7 0 96v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm48 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0zM64 288c-35.3 0-64 28.7-64 64v64c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V352c0-35.3-28.7-64-64-64H64zm280 72a24 24 0 1 1 0 48 24 24 0 1 1 0-48zm56 24a24 24 0 1 1 48 0 24 24 0 1 1 -48 0z"/></svg>
+									<span data-key="t-dashboards">Hardware Management</span>
+                                    
+								</a>
+								<div class="menu-dropdown collapse show" id="sidebarStaff" style="">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="#handlers" class="nav-link" data-key="t-one-page">Handlers</a>
+                                        </li>
+                                        <li class="nav-item">
+                                            <a href="#towers" class="nav-link" data-key="t-nft-landing">Towers</a>
+                                        </li>
+                                        
+                                    </ul>
+                                </div>
+                                
+                            </li>
+							
+							
+							<li class="nav-item">
+                                <a class="nav-link menu-link collapsed" href="#sidebarSettings" data-bs-toggle="collapse" role="button" aria-expanded="false" aria-controls="sidebarAuth">
+									<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><path d="M495.9 166.6c3.2 8.7 .5 18.4-6.4 24.6l-43.3 39.4c1.1 8.3 1.7 16.8 1.7 25.4s-.6 17.1-1.7 25.4l43.3 39.4c6.9 6.2 9.6 15.9 6.4 24.6c-4.4 11.9-9.7 23.3-15.8 34.3l-4.7 8.1c-6.6 11-14 21.4-22.1 31.2c-5.9 7.2-15.7 9.6-24.5 6.8l-55.7-17.7c-13.4 10.3-28.2 18.9-44 25.4l-12.5 57.1c-2 9.1-9 16.3-18.2 17.8c-13.8 2.3-28 3.5-42.5 3.5s-28.7-1.2-42.5-3.5c-9.2-1.5-16.2-8.7-18.2-17.8l-12.5-57.1c-15.8-6.5-30.6-15.1-44-25.4L83.1 425.9c-8.8 2.8-18.6 .3-24.5-6.8c-8.1-9.8-15.5-20.2-22.1-31.2l-4.7-8.1c-6.1-11-11.4-22.4-15.8-34.3c-3.2-8.7-.5-18.4 6.4-24.6l43.3-39.4C64.6 273.1 64 264.6 64 256s.6-17.1 1.7-25.4L22.4 191.2c-6.9-6.2-9.6-15.9-6.4-24.6c4.4-11.9 9.7-23.3 15.8-34.3l4.7-8.1c6.6-11 14-21.4 22.1-31.2c5.9-7.2 15.7-9.6 24.5-6.8l55.7 17.7c13.4-10.3 28.2-18.9 44-25.4l12.5-57.1c2-9.1 9-16.3 18.2-17.8C227.3 1.2 241.5 0 256 0s28.7 1.2 42.5 3.5c9.2 1.5 16.2 8.7 18.2 17.8l12.5 57.1c15.8 6.5 30.6 15.1 44 25.4l55.7-17.7c8.8-2.8 18.6-.3 24.5 6.8c8.1 9.8 15.5 20.2 22.1 31.2l4.7 8.1c6.1 11 11.4 22.4 15.8 34.3zM256 336a80 80 0 1 0 0-160 80 80 0 1 0 0 160z"/></svg>
+									
+									<span data-key="t-dashboards">Settings</span>
+                                    
+								</a>
+                                <div class="menu-dropdown collapse show" id="sidebarSettings" style="">
+                                    <ul class="nav nav-sm flex-column">
+                                        <li class="nav-item">
+                                            <a href="settings.html" class="nav-link" data-key="t-one-page">All Settings</a>
+                                        </li>
+                                       
+                                    </ul>
+                                </div>
+                            </li>
+							
+							<li class="nav-item">
+                                <a class="nav-link menu-link collapsed" href="support.html" >
+								<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--!Font Awesome Free 6.5.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2024 Fonticons, Inc.--><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/></svg>
+									<span data-key="t-dashboards">Support</span>
+                                    
+								</a>
+								
+                                
+                            </li>
+							
+							
+                         
+                        </div></div></div></div><div class="simplebar-placeholder" style="width: 249px; height: 1055px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: hidden;"><div class="simplebar-scrollbar" style="height: 0px; display: none;"></div></div><div class="simplebar-track simplebar-horizontal"><div class="simplebar-scrollbar"></div></div><div class="simplebar-track simplebar-vertical"><div class="simplebar-scrollbar"></div></div></ul>
+                    </div>
+                    <!-- Sidebar -->
+                </div></div></div></div><div class="simplebar-placeholder" style="width: 249px; height: 1055px;"></div></div><div class="simplebar-track simplebar-horizontal" style="visibility: hidden;"><div class="simplebar-scrollbar" style="width: 0px; display: none;"></div></div><div class="simplebar-track simplebar-vertical" style="visibility: visible;"><div class="simplebar-scrollbar" style="height: 381px; transform: translate3d(0px, 0px, 0px); display: block;"></div></div></div>
+
+                <div class="sidebar-background"></div>
+            </div>
+            <!-- Left Sidebar End -->
+            <!-- Vertical Overlay-->
+            <div class="vertical-overlay"></div>
+
+            <!-- ============================================================== -->
+            <!-- Start right Content here -->
+            <!-- ============================================================== -->
+            <div class="main-content">
+
+                <div class="page-content" id="page-content">
+					
+                    <div class="container-fluid" style="margin-top:-5%;">
+						<!-- start page root -->
+                        <!-- start page title -->
+                        <div class="row" style="margin-top:;">
+                            <div class="col-12">
+                                <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+                                    <h4 class="mb-sm-0">Parking Dashboard</h4>
+
+                                    <div class="page-title-right">
+                                        <ol class="breadcrumb m-0">
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
+                                            <li class="breadcrumb-item active">Parking Dashboard</li>
+                                        </ol>
+                                    </div>
+									<div style="position:absolute;top:100%;left:1%;z-index:2;">
+										<button class="new-spot" onclick="addParking()" style="padding:12px;cursor:pointer;background:#FF7474;border-radius:8px;border: none;min-width:245px;">Add New Spot +</button>
+									</div>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- end page title -->
+
+                        <div class="row" style="margin-top:-1%;">
+                            <div class="col-xl-6">
+                                <div class="d-flex flex-column h-100">
+                                    <div class="row">
+                                        <div class="col-xl-6 col-md-6" onclick="location.hash='account'" style="cursor: pointer;">
+                                            <div class="card card-animate overflow-hidden ">
+                                                <div class="position-absolute start-0" style="z-index: 0;">
+                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+                                                        <style>
+                                                            .s0 {
+                                                                opacity: .05;
+                                                                fill: var(--vz-success);
+																
+                                                            }
+                                                        </style>
+                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body" style="z-index:1 ;">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Total Spots</p>
+                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="36894">36,894</span></h4>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                </div><!-- end card body -->
+                                            </div><!-- end card -->
+                                        </div><!--end col-->
+                                        <div class="col-xl-6 col-md-6" onclick="location.hash='account'" style="cursor: pointer;">
+                                            <!-- card -->
+                                            <div class="card card-animate overflow-hidden">
+                                                <div class="position-absolute start-0" style="z-index: 0;">
+                                                    <svg version="1.2" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 120" width="200" height="120">
+                                                        <style>
+                                                            .s0 {
+                                                                opacity: .05;
+                                                                fill: var(--vz-success)
+                                                            }
+                                                        </style>
+                                                        <path id="Shape 8" class="s0" d="m189.5-25.8c0 0 20.1 46.2-26.7 71.4 0 0-60 15.4-62.3 65.3-2.2 49.8-50.6 59.3-57.8 61.5-7.2 2.3-60.8 0-60.8 0l-11.9-199.4z"></path>
+                                                    </svg>
+                                                </div>
+                                                <div class="card-body" style="z-index:1 ;">
+                                                    <div class="d-flex align-items-center">
+                                                        <div class="flex-grow-1 overflow-hidden">
+                                                            <p class="text-uppercase fw-medium text-muted text-truncate mb-3"> Booked Spots</p>
+                                                            <h4 class="fs-22 fw-semibold ff-secondary mb-0"><span class="counter-value" data-target="28410">28,410</span></h4>
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div><!-- end card body -->
+                                            </div><!-- end card -->
+                                        </div><!-- end col -->
+                                        
+                                 </div><!--end row-->
+                                </div>
+                            </div><!--end col-->
+                            							
+							<div class="col-xl-6">
+								<div class="card card-card card-height-100" >
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Recent Events</h4>
+                                        <div class="flex-shrink-0">
+                                            <button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Events')">
+                                                Export Report
+                                            </button>
+                                        </div>
+                                    </div><!-- end card header -->
+                            
+                                    <!-- card body -->
+                                    <div class="card-body">
+                            
+                                        
+                                        <div class="px-2 py-2 mt-4">
+                                            <p class="mb-1">Made Withdrawal of KES 34,000<span class="float-end">Date today</span></p>
+                                            
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+							</div>
+							
+							<div class="col-xl-6">
+                                <div class="card card-card card-height-100 " style="overflow-y:auto;">
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Current Status</h4>
+                                        <div class="flex-shrink-0">
+                                            <a  class="btn btn-soft-primary btn-sm" id="refreshChart" onclick="refreshChart()">Refresh <i class="fa-arrow-right-line align-bottom"></i></a>
+                                        </div>
+                                    </div><!-- end card header -->
+
+                                    <div class="card-body">
+                                        <div class="table-responsive table-card">
+											<div style="width:100%;height:95%;">
+												<canvas id="myChart" style="width:100%;max-width:700px"></canvas>
+											</div>
+											
+                                        </div>
+                                        
+                                    </div>
+                                </div> <!-- .card-->
+                            </div><!--end col-->
+							<div class="col-xl-6">
+								<div class="card card-card card-height-100" style="min-width: 45%;">
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Sales By Location</h4>
+                                        <div class="flex-shrink-0">
+                                            <button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Sales')">
+                                                Export Report
+                                            </button>
+                                        </div>
+                                    </div><!-- end card header -->
+                            
+                                    <!-- card body -->
+                                    <div class="card-body">
+                       
+                                        <div class="px-2 py-2 mt-4">
+                                            
+                                            <p class="mt-3 mb-1">Eastleigh <span class="float-end">47%</span>
+                                            </p>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 47%" aria-valuenow="47" aria-valuemin="0" aria-valuemax="47"></div>
+                                            </div>
+                            
+                                            <p class="mt-3 mb-1">Nairobi CBD <span class="float-end">82%</span></p>
+                                            <div class="progress mt-2" style="height: 6px;">
+                                                <div class="progress-bar progress-bar-striped bg-primary" role="progressbar" style="width: 82%" aria-valuenow="82" aria-valuemin="0" aria-valuemax="82"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- end card body -->
+                                </div>
+							</div>
+                        </div><!--end row-->
+                        
+						
+                        <div class="row" style="min-width: 99%;">
+                            <div class="col-xxl-8">
+                                <div class="card card-card" style="min-width: 99%;">
+                                    <div class="card-header align-items-center d-flex">
+                                        <h4 class="card-title mb-0 flex-grow-1">Recent Bookings</h4>
+                                        <div class="flex-shrink-0">
+                                            <button type="button" class="btn btn-soft-info btn-sm" id="generateReport" onclick="generateReport('Booking')">
+                                                <i class="fa-file-list-3-line align-bottom"></i> Generate Report
+                                            </button>
+                                        </div>
+                                    </div><!-- end card header -->
+                        
+                                    <div class="card-body">
+                                        <div class="table-responsive table-card">
+                                            <table class="table table-borderless table-centered align-middle table-nowrap mb-0">
+                                                <thead class="text-muted table-light">
+                                                    <tr>
+                                                        <th scope="col">ID</th>
+                                                        <th scope="col">User Name</th>
+                                                        <th scope="col">Designation</th>
+                                                        <th scope="col">Rate/hr</th>
+                                                        <th scope="col">Registration</th>
+                                                        <th scope="col">Type</th>
+                                                        <th scope="col">Analysis</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr class="booking-detail" onclick="bookingDetail()">
+                                                        <td>
+                                                            <a href="#order" class="fw-medium link-primary">#VZ2112</a>
+                                                        </td>
+                                                        <td>
+                                                            <div class="d-flex align-items-center">
+                                                                <div class="flex-shrink-0 me-2">
+                                                                    <img src="assets/images/users/avatar.jpg" alt="" class="avatar-xs rounded-circle">
+                                                                </div>
+                                                                <div class="flex-grow-1">Nicholas Ball</div>
+                                                            </div>
+                                                        </td>
+                                                        <td>Nairobi CBD</td>
+                                                        <td>
+                                                            <span class="text-success">$109.00</span>
+                                                        </td>
+                                                        <td>KCA 546T</td>
+                                                        <td>
+                                                            <span class="badge bg-success-subtle text-success">Flat Rate/Hourly</span>
+                                                        </td>
+                                                        <td>
+                                                            <span class="badge bg-success-subtle text-success"><a style="cursor:pointer;" class="booking-detail">Detail</a></span>
+                                                        </td>
+                                                    </tr><!-- end tr -->
+                                                    
+                                                </tbody><!-- end tbody -->
+                                            </table><!-- end table -->
+                                        </div>
+                                    </div>
+                                </div> <!-- .card-->
+                            </div> <!-- .col-->
+                            
+                        </div> <!-- end row-->
+						
+						<div> <!-- pageroot-->
+                    </div>
+                    <!-- container-fluid -->
+                
+                <!-- End Page-content -->
+
+                <footer class="footer">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <script>document.write(new Date().getFullYear())</script> © WePark.
+                            </div>
+                            <div class="col-sm-6">
+                                <div class="text-sm-end d-none d-sm-block">
+                                    Design &amp; Develop by franci
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </footer>
+            </div>
+            <!-- end main content-->
+
+        </div>
+        <!-- END layout-wrapper -->
+
+
+
+        <!--start back-to-top-->
+        <button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top" style="display: none;">
+            <i class="fa fa-arrow-up line"></i>
+        </button>
+        <!--end back-to-top-->
+
+        <!--preloader-->
+        <div id="preloader">
+            <div id="status">
+                <div class="spinner-border text-primary avatar-sm" role="status">
+                    <span class="visually-hidden">Loading...</span>
+                </div>
+            </div>
+        </div>
+		<div id="pageRoot"> 
+		
+		</div>
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+		<script src="assets/js/admin.js"></script>
+		
+		<script src="assets/js/bootstrap.bundle.min.js"></script>
+        <script src="assets/js/feather.min.js"></script>
+		<script src="assets/js/waves.min.js"></script>
+		<script src="assets/js/simplebar.min.js"></script>
+        <!-- apexcharts -->
+        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+
+       
+
+        <!-- gridjs js -->
+        <script src="assets/libs/gridjs/gridjs.umd.js"></script>
+
+        <!-- Dashboard init -->
+        <script src="assets/js/pages/dashboard-job.init.js"></script>
+		<script src="assets/js/jquery.bundle.js"></script>
+        <script src="assets/js/app.js"></script>
+		<script src="assets/functions.js"></script>
+		<script src="assets/analysis.js"></script>
+		<script src="assets/admin.js"></script>
+		
+    
+
+<svg id="SvgjsSvg1222" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1223"></defs><polyline id="SvgjsPolyline1224" points="0,0"></polyline><path id="SvgjsPath1225" d="M0 0 "></path></svg><div class="jvm-tooltip"></div><div class="jvm-tooltip"></div><div class="jvm-tooltip"></div></body></html>
