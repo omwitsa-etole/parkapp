@@ -25,7 +25,7 @@
         <!-- custom Css-->
         <link href="assets/css/custom.min.css" rel="stylesheet" type="text/css">
 		<link href="assets/admin.css" rel="stylesheet" type="text/css">
-		
+		<link href="assets/css/analysis..css" rel="stylesheet" type="text/css">
 		<script src="https://kit.fontawesome.com/c63faa1f51.js" crossorigin="anonymous"></script>
 
 
@@ -457,7 +457,7 @@
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Recent Events</h4>
                                         <div class="flex-shrink-0">
-                                            <button type="button" class="btn btn-soft-primary btn-sm">
+                                            <button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Events')">
                                                 Export Report
                                             </button>
                                         </div>
@@ -501,7 +501,7 @@
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Sales By Location</h4>
                                         <div class="flex-shrink-0">
-                                            <button type="button" class="btn btn-soft-primary btn-sm">
+                                            <button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Sales')">
                                                 Export Report
                                             </button>
                                         </div>
@@ -536,7 +536,7 @@
                                     <div class="card-header align-items-center d-flex">
                                         <h4 class="card-title mb-0 flex-grow-1">Recent Bookings</h4>
                                         <div class="flex-shrink-0">
-                                            <button type="button" class="btn btn-soft-info btn-sm" id="generateReport" onclick="generateReport()">
+                                            <button type="button" class="btn btn-soft-info btn-sm" id="generateReport" onclick="generateReport('Booking')">
                                                 <i class="fa-file-list-3-line align-bottom"></i> Generate Report
                                             </button>
                                         </div>
@@ -557,9 +557,9 @@
                                                     </tr>
                                                 </thead>
                                                 <tbody>
-                                                    <tr class="booking-detail">
+                                                    <tr class="booking-detail" onclick="bookingDetail()">
                                                         <td>
-                                                            <a href="#!" class="fw-medium link-primary">#VZ2112</a>
+                                                            <a href="#order" class="fw-medium link-primary">#VZ2112</a>
                                                         </td>
                                                         <td>
                                                             <div class="d-flex align-items-center">
@@ -657,8 +657,9 @@
 		<script src="assets/js/jquery.bundle.js"></script>
         <script src="assets/js/app.js"></script>
 		<script src="assets/functions.js"></script>
-		<script src="assets/admin.js"></script>
 		<script src="assets/analysis.js"></script>
+		<script src="assets/admin.js"></script>
+		
     
 
 <svg id="SvgjsSvg1222" width="2" height="0" xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.dev" style="overflow: hidden; top: -100%; left: -100%; position: absolute; opacity: 0;"><defs id="SvgjsDefs1223"></defs><polyline id="SvgjsPolyline1224" points="0,0"></polyline><path id="SvgjsPath1225" d="M0 0 "></path></svg><div class="jvm-tooltip"></div><div class="jvm-tooltip"></div><div class="jvm-tooltip"></div></body></html>

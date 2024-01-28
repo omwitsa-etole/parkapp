@@ -15,7 +15,7 @@ function showTab(n) {
   } else {
     document.getElementById("prevBtn").style.display = "inline";
   }
-  if (n >= (x.length - 1)) {
+  if (n > (x.length)) {
     document.getElementById("nextBtn").innerHTML = "Submit";
 	document.getElementById("nextBtn").setAttribute("type", "Submit");
 	document.getElementById("nextBtn").removeAttribute("onclick");
@@ -37,13 +37,17 @@ function nextPrev(n) {
   // Increase or decrease the current tab by 1:
   currentTab = currentTab + n;
   // if you have reached the end of the form... :
-  if (currentTab >= x.length) {
+  console.log(currentTab,x.length)
+  if (currentTab === x.length) {
     //...the form gets submitted:
-    document.getElementById("regForm").submit();
+    //document.getElementById("regForm").submit();
+	currentTab = currentTab-1;
+	newParking()
     return false;
   }
   // Otherwise, display the correct tab:
   showTab(currentTab);
+  
 }
 
 function validateForm() {
@@ -103,45 +107,55 @@ const loadActivity = () =>{
 
 function newParking(){
 	
-	let el = document.createElement("div");
-	el.classList.add("normal");
+	const body =document.getElementById("page-content");
+	let id = Math.floor(Math.random() * 999);
+	id = ""+id
+	const el = document.createElement("div")
+	el.setAttribute("class","bookingdetail")
+	el.setAttribute("id",id)
 	el.innerHTML = `
 
-<div class="card"> 
-  <button type="button" class="dismiss" onclick="addParking()">×</button> 
-  <div class="header"> 
-    <div class="image">
-      
-	  </div> 
-      <div class="content">
-         <span class="title">Parking space added</span> 
-         <p class="message">Your parking space has been added, continue to add slots in preview</p> 
-         </div> 
-         <div class="actions">
-            <button type="button" class="history" onclick="previewParking()">Preview</button> 
-            <button type="button" class="track" onclick="addParking()">Back</button> 
-</div> 
-</div> 
-</div>
+		<section class="vh-100">
+			  <div class="container py-5 h-100 w-100">
+				<div class="row d-flex justify-content-center align-items-center" style="width:568px;">
+				  <div class="col-md-12 col-xl-4">
 
+					<div class="card" style="border-radius: 15px;min-width:568px;position:relative;height:356px;">
+						<button type="button" style=": pointer;" class="dismiss" onclick="document.getElementById(${id}).remove()">×</button> 
+						  <div class="header"> 
+							<div class="image">
+							  
+						    </div> 
+						    <div class="">
+								<span class="title">Parking space added</span> 
+								<p class="message">Your parking space has been added, continue to add slots in preview</p> 
+							</div> 
+							
+						  </div> 
+						<div class="actions" style=""position:absolute;bottom:1%;>
+							<button type="button" class="history" onclick="previewParking()">Preview</button> 
+							<button type="button" class="track" onclick="document.getElementById(${id}).remove()">Cancel</button> 
+						</div> 
+					</div>
+					
+				  </div>
+				</div>
+			  </div>
+		</section>
 	`;
 	openTab();
 	body.appendChild(el);
 }
 
 function previewParking(){
-	let el = document.createElement("div");
-	el.classList.add("normal");
-	el.innerHTML = `Preview parking spots`;
-	openTab();
-	body.appendChild(el);
+	parkingMap()
 }
 
 function closeTab(){
 	body.removeAttribute("style");
 }
 function openTab(){
-	body.setAttribute("style","display:block");
+	body.setAttribute("style","");
 }
 
 function parkingMap(){

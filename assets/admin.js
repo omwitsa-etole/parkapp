@@ -48,7 +48,7 @@ function towerPage(){
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">All Towers</h4>
 					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
+						<button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Towers')">
 							<i class="fa fa-file-list-3-line align-middle"></i> Generate Report
 						</button>
 					</div>
@@ -106,11 +106,7 @@ function towerPage(){
 			<div class="card" style="min-width: 99%;">
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">Recent Tower Events</h4>
-					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
-							<i class="fa fa-file-list-3-line align-middle"></i> Generate Report
-						</button>
-					</div>
+					
 				</div><!-- end card header -->
 
 				<div class="card-body">
@@ -193,7 +189,7 @@ function handlerPage(){
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">All Handlers</h4>
 					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
+						<button type="button" class="btn btn-soft-primary btn-sm" onclick="generateReport('Haandlers')">
 							<i class="fa fa-file-list-3-line align-middle"></i> Generate Report
 						</button>
 					</div>
@@ -249,9 +245,7 @@ function handlerPage(){
 				<div class="card-header align-items-center d-flex">
 					<h4 class="card-title mb-0 flex-grow-1">Recent Handler Events</h4>
 					<div class="flex-shrink-0">
-						<button type="button" class="btn btn-soft-primary btn-sm">
-							<i class="fa fa-file-list-3-line align-middle"></i> Generate Report
-						</button>
+						
 					</div>
 				</div><!-- end card header -->
 
@@ -353,6 +347,8 @@ function hashChange(){
 		addnewPage();
 	}else if(hash.includes("profile")){
 		location.href = "profile.html"
+	}else if(hash.includes("order")){
+		orderDetail();
 	}else{
 		adminDashboard();
 	}
@@ -363,4 +359,6 @@ window.addEventListener("hashchange",(e)=>{
 })
 
 hashChange();
+
+
 

@@ -1,21 +1,28 @@
 .normal{
 	position:fixed;
-	top:50%;
-	left: 50%;
-	transform:translate(-50%,-50%);
-	box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-	border-radius: 10px;
-	z-index: 3px;
-	width: 425px;
-	min-height: 37px;
-	display:flex;
-	text-align:center;
-	background:white;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:4;
+	overflow:auto;
+	
+}
+.bookingdetail{
+	position:fixed;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index:4;
+	overflow:auto;
 }
 .normal-active{
 	height: 345px;
-	display:grid;
-	place-items:center;
+	width:55%;
+	display:flex;
+	text-align:center;
+	background:white;
 }
 .slidecontainer {
   width: 100%; /* Width of the outside container */
@@ -236,4 +243,75 @@ bottom: 2%;
   visibility: visible;
   transform: scale(1);
   transition: 0s;
+}
+
+
+.searchlocation {
+    padding: 20px;
+    margin-top: -6px;
+    border: 0;
+    border-radius: 0;
+    background: #f1f1f1;
+ }
+  
+.flexdisplay{
+	display:flex;
+	flex-direction:row;
+	flex-wrap:wrap;
+	width:99%;
+	gap:10px;
+}
+.flexrow{
+	flex:auto;
+	
+}
+.setrelative{position:relative; }
+.block-rate{
+	position:absolute;
+	right:2%;
+	top:2%;
+	width:64px;
+	height:64px;
+	border-radius:50%;
+	background:#23232b;
+	cursor:pointer;
+	color: white;
+	display:flex;
+	align-items:center;
+	text-align:center;
+}
+.btn-group{
+	position:relative;
+}
+.drop-toggle{
+	width:16px;
+	color:;
+	background:#ff7474;
+}
+
+.paycard{
+	width:112px;
+	height:96px;
+	Cursor:pointer;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	position:relative;
+}
+.paycard:hover{
+	box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+.cardtext{
+	position:absolute;
+	top:50%;
+	left:50%;
+	transform:translate(-50%,-50%);
+	font-size:23px;
+	color:#ff7474;
+}
+.floatright{
+	position:fixed;
+	top:25%;
+	right:5%;
+	width:342px;
+	box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+	overflow:auto;
 }
