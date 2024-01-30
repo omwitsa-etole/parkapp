@@ -161,11 +161,9 @@ function openTab(){
 function parkingMap(){
 	const body = document.getElementById("page-content");
 	body.innerHTML = `
-	<div style="position:relative;width: 100%;">
+	<div style="position:relative;width: 100%;margin-top:-35px;">
 	<h4>ParkingMap</h4>
-	<div class="savebtn">
-		<input type="button" class="" value="Save Updates">
-	</div>
+	
 	<a class="settings-map" id="settings-map">
 		<i class="fa-solid fa-bars"></i>
 	</a>
@@ -398,7 +396,7 @@ function parkingPage(){
 				</div>
 				<div class="buttons">
 					<button class="button-6" onclick="loadMap()">Map</button>
-					<button class="button-6" onclick="analysisPage()">Analysis</button>
+					<button class="button-6" onclick="ParkAnalysis()">Analysis</button>
 				</div>
 			</div>
 			<hr class="rowcontainer"/>

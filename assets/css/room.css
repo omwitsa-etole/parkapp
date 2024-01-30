@@ -1,0 +1,382 @@
+.main-grid{
+		min-width:25%;
+		flex:auto;
+		margin-bottom:1.875rem;
+		
+			@include custommq ($max:1600px){
+				width:25%;
+			}
+			@include respond('laptop'){
+				width:25%;
+				margin-bottom:1.563rem;
+			}
+			@include respond ('tab-land'){
+				width:33.33%;	
+			}
+			@include respond ('tab-port'){
+				width:50%;
+			}
+			@include respond ('phone'){
+				width:100%;
+			}
+	.grid-info{
+		padding:0.625rem;
+		border: 1px solid #C2C2C2;
+		background: #fff;
+		border-radius:$radius;
+	}	
+	.popular-rooms{
+		.dropdown{
+			&.dropstart{
+				z-index:2;
+				
+				.btn-link{
+					display: inline-block;
+					width: 2.875rem;
+					height:  2.875rem;
+					position: absolute;
+					text-align: center;
+					border-radius: 50%;
+					line-height: 2.875rem;
+					top: 0.938rem;
+					right:0.938rem;
+					background: #00000033;
+				}
+				svg{
+					width:1.5rem;
+					height:1.5rem;
+				}
+			}
+		}
+		img{
+			height:9.625rem;
+			object-fit:cover;
+			@include respond ('phone'){
+				height:6.938rem;
+			}
+		}
+	}
+
+	.review-area{
+		display:flex;
+		align-items:center;
+		justify-content:space-between;
+		 margin: 1.063rem 0rem 1.563rem 0rem;
+		 padding:0px 0.5rem;
+		 @include respond ('phone'){
+			 margin: 1.063rem 0rem 1.2rem 0rem;
+		 }
+		.star-rate{
+			display:flex;
+			align-items:center;
+			h4{
+				font-size:1rem;
+				font-weight:700;
+				@include respond ('tab-land'){
+					font-size:1rem;
+				}
+				
+			}
+			ul{
+				display:flex;
+				align-items:center;
+				padding-left:0.438rem;
+				li{
+					padding-right:0.438rem;
+					i{
+						color: #F66F4D;
+						font-size:1rem;;
+						@include respond ('tab-port'){
+							font-size:0.9rem;
+						}
+
+					}
+				}
+			}
+		}
+		p{
+			font-size:0.875rem;
+			@include respond('tab-port'){
+				font-size:0.871rem;
+			}
+		}
+	}
+		.feature-list{
+			padding:0px 0.5rem;
+			li{
+				margin-bottom: 0.625rem;
+				font-size: 0.938rem;
+				color: #2D3134;
+				font-weight: 400;
+				border-bottom: 1px solid #EAEAEA;
+				padding-bottom: 0.625rem;
+				@include respond ('tab-land'){
+					font-size:0.9rem;
+				}
+			}
+			li:last-child{
+				border-bottom:none;
+			}
+			span{
+				float:right;
+				color:#717579;
+			}
+		}
+}		
+.grid-tabs{	
+	.nav-item{
+		.nav-link{
+			width:3.375rem;
+			height:3.375rem;
+			padding:0;
+			background:#F4F4F4;
+			border-radius:$radius;
+			margin-left:1.5rem;
+			border:0;
+			@include respond ('laptop'){
+				width:2.813rem;
+				height:2.813rem;
+				margin-left:0.938rem;
+			}
+			svg{
+				path{
+					fill:$light;
+				}
+				@include respond ('laptop'){
+					width:1.25rem;
+					height:1.25rem;
+				}
+			}
+			&.active{
+				background: #efdedc;
+				svg{
+					path{
+						fill:$primary;
+					}
+				}
+			}
+		}
+	}		
+}
+
+.popular-rooms {
+	@include transitionFast;
+	position: relative;
+	z-index: 1;
+	overflow:hidden;
+	border-radius:$radius;
+	img{
+		width: 100%;
+		height:20.938rem;
+		object-fit:cover;
+		@include transitionFast;
+		@include respond ('phone-land'){
+			height:10.938rem;
+		}
+		
+	}	
+	.badgecontent{
+		position: absolute;
+		bottom: 0;
+		padding: 1.25rem 1.25rem;
+		z-index:;
+		.badge{
+			padding: 0.5rem 0.875rem 0.5rem 0.875rem;
+			border-radius: $radius;
+			font-size: 0.75rem;
+			font-weight: 400;
+			color: #fff;
+		}
+		h3{
+			font-size:1.313rem;
+			@include respond('tab-land'){
+				font-size:1.2rem;
+			}
+			a{
+				color:$white;
+			}
+			
+		}
+	}
+	&:after{
+		position:absolute;
+		content:"";
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0) 29.8%, rgba(0, 0, 0, 0.44) 100%);
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		z-index:0;
+	}
+}
+
+
+.badge-success {
+    background-color: #78D69D;
+}
+.badge {
+    line-height: 1.5;
+    border-radius: 0.5rem;
+    padding: 0.25rem 0.625rem;
+    border: 0.0625rem solid transparent;
+    font-weight: 500;
+}
+.badge {
+    display: inline-block;
+    padding: 0.35em 0.65em;
+    font-size: 0.75em;
+    font-weight: 700;
+    line-height: 1;
+    color: #fff;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: baseline;
+    border-radius: 0.75rem;
+}
+.profile-media{
+	display: flex;
+    justify-content: space-between;
+    align-items: center;
+	img{
+		width:5rem;
+		height:5rem;
+		object-fit:cover;
+		border-radius:100%;
+		border:1px solid #EAEAEA;
+		margin-right:1rem;
+		padding:0.313rem; 
+		@include respond('laptop'){
+			margin-right:0.938rem;
+		}
+	}
+
+}
+
+.p-title{
+	font-size:1.5rem;
+	@include respond ('phone'){
+		font-size:1rem;
+		white-space:nowrap;
+	}
+}
+[data-container="boxed"] {
+	div > span{
+		white-space:unset;
+	}
+}
+[data-container="wide-boxed"] {
+	.search-area2{
+		width:auto;
+	}
+	
+}
+
+
+.concierge-bx{
+			
+	.concierge-img{
+		text-align:center;
+		margin-bottom:0.688rem;
+		img{
+			width:7.813rem;
+			height:7.813rem;
+			object-fit:cover;
+			border-radius:100%;
+			
+			@include respond('tab-land'){
+					width: 5.813rem;
+					height:5.813rem;
+			}
+		}
+	}
+	.concierge-content{
+			text-align:center;
+			h2{
+				font-size:1.5rem;
+				@include respond('tab-land'){
+					font-size:1rem;
+				}
+			}
+	}
+	.concierge-icon{
+		ul{
+			li{
+				.concierge-list,
+				.concierge-list-2{
+					display: inline-block;
+					width: 3rem;
+					height: 3rem;
+					text-align: center;
+					border-radius: 50%;
+					line-height:2.9rem;
+					margin:0 0.938rem;
+					
+					@include respond('tab-land'){
+						width:2.625rem;
+						height:2.625rem;
+						line-height:2.625rem;
+					}
+					svg{
+						width:1.3rem;
+						height:1.3rem;
+						@include respond('tab-land'){
+							width:0.938rem;
+							height:0.938rem;
+						}	
+					}
+				}
+				.concierge-list{
+					background-color:#16B45526;
+					&:hover{
+						background:$success;
+						svg{
+							path{
+								fill:#ffff;
+							}
+						}
+					}
+				}
+				.concierge-list-2{
+					background-color:#F4F4F4;
+				}
+			}
+		
+			
+		}
+	}
+
+.concierge-title{
+	h4{
+		font-size:0.875rem;
+		font-weight:400;
+		@include respond('tab-land'){
+			font-size:0.8rem;
+		}
+	}
+	span{
+		font-size:0.75rem;
+		
+	}
+}
+.concierge-footer{
+	p{
+		line-height:1.625rem;
+	}
+	span{
+		font-size:0.75rem;
+		display:block;
+		margin-bottom:0.5rem;
+	}
+}
+	
+.media-bx{
+	img{
+		width:58px;
+		height:58px;
+		border-radius:33px;
+		object-fit:cover;
+	}
+}
+.add-btn{
+	
+}

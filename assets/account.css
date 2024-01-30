@@ -684,3 +684,52 @@ button:not(:disabled), [type=button]:not(:disabled), [type=reset]:not(:disabled)
     border-color: rgba(0,0,0,0);
     background: #ffe0db;
 }
+
+.trading {
+    background: #f8857d !important;
+}
+.guest-list {
+    align-items: center;
+	span{
+		color:#717579;
+	}
+}
+.guest-list img {
+    width: 2.25rem;
+    height: 2.25rem;
+	border-radius:3.125rem;
+	margin-right:1.25rem;
+	object-fit:cover;
+}
+.light.btn-primary {
+    background-color: ;
+    border-color: #F8857D;
+    color: #f8857d;
+	position:absolute;
+	right:1%;
+	top:0;
+}
+
+.default-select {
+    padding: 0.875rem 2.8125rem 0.875rem 1.125rem;
+    line-height: 1;
+    align-items: center;
+    display: flex;
+    border-radius: 0.5rem;
+    margin-left: 1.5rem;
+    font-weight: 500;
+    color: #000;
+    border: 1px solid #C2C2C2 !important;
+}
+.page-content{
+	margin-top:69px;
+	position:relative;
+}
+.btn-back{
+	position:absolute;
+	top:1%;
+	left:2%;
+}
+.detailist li{
+	display:inline-block;
+}
